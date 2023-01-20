@@ -1,6 +1,6 @@
 import React from "react";
-import SubTitle from "./SubTitle"
-import ServicesTable from "./ServicesTable";
+import SubTitle from "../SubTitle"
+import ServicesTable from "../ServicesTable";
 
 const Services = ({ services }) => {
 

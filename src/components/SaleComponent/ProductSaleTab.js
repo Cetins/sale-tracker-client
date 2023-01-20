@@ -34,12 +34,12 @@ const ProductSaleTab = ({
         <div className="SecondTab">
             <form className="styled-form" onSubmit={handleProductSaleSubmit}>
                 <div>
-                    <label>Product:</label>
-                    <SelectProduct products={products} handleProductChange={handleProductChange} />
-                </div>
-                <div>
                     <label>Staff:</label>
                     <SelectStaff staff={staff} handleStaffMemberChange={handleStaffMemberChange} />
+                </div>
+                <div>
+                    <label>Product:</label>
+                    <SelectProduct products={products} handleProductChange={handleProductChange} />
                 </div>
                 <div>
                     <label>Date:</label>
