@@ -5,6 +5,7 @@ import Sales from './containers/Sales';
 import Dashboard from './containers/Dashboard';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
+import NewProduct from './components/dashboard/NewProduct';
 import './App.css';
 
 const PrivateRoute = () => {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route exact path='/dashboard'element={<Dashboard/>} />
           <Route exact path='/sales' element={<Sales />} />
+          <Route exact path='/product-new' element={<NewProduct />} />
         </Routes>
         <Footer />
       </Router>

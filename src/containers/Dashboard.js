@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Products from "../components/Products";
-import Services from "../components/Services";
+import Products from "../components/dashboard/Products";
+import Services from "../components/dashboard/Services";
 import MainTitle from "../components/MainTitle";
 import ProductService from "../services/ProductService";
 import ServiceService from "../services/ServiceService";
