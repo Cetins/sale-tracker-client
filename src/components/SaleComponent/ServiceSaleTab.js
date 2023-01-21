@@ -18,7 +18,6 @@ const ServiceSaleTab = ({
     }) => {
 
     const handleServiceSaleSubmit = (e) => {
-        e.preventDefault();
         addSale({
             category: "service",
             title: service.title,
@@ -26,7 +25,7 @@ const ServiceSaleTab = ({
             staff: staffMember.name,
             date: date
         });
-        console.log("add service sale")
+        window.alert('New sale added successfully');
     }
     
     return (
