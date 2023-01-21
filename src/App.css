@@ -38,3 +38,13 @@ body {
   margin: 1em;
   padding: 1em;
 }
+
+button {
+  background-color: var(--accent);
+  border: none;
+  font-size: 1.2em;
+  color: var(--text);
+  margin: 1em;
+  padding: .2em;
+  font-size: 1.2em;
+}
