@@ -1,7 +1,9 @@
 import React from "react";
-import "../styles/Table.css"
+import "../styles/Table.css";
+import { Link } from "react-router-dom";
 
 const ProductsTable = ({ products }) => {
+
     const tableItems = products.map(item => {
         return (
             <tr key={item._id}>
@@ -10,6 +12,7 @@ const ProductsTable = ({ products }) => {
                 <td>£ {item.cost}</td>
                 <td>£ {item.price}</td>
                 <td>{item.stock}</td>
+                <td><Link to={`/product/${item._id}`}>update</Link></td>
             </tr>
         )
     });
