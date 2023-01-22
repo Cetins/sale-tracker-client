@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import NewProduct from './components/dashboard/NewProduct';
 import './App.css';
 import EditProduct from './components/dashboard/EditProduct';
+import EditService from './components/dashboard/EditService';
 
 const PrivateRoute = () => {
   const auth = null;
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/sales' element={<Sales />} />
           <Route exact path='/product-new' element={<NewProduct />} />
           <Route path="product/:productId" element={<EditProduct />} />
+          <Route path="service/:serviceId" element={<EditService />} />
         </Routes>
         <Footer />
       </Router>
