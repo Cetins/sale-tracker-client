@@ -2,6 +2,7 @@ import React from "react";
 import SubTitle from "../SubTitle";
 import ProductsTable from "../ProductsTable";
 import { Link } from "react-router-dom";
+import { FaPlus } from 'react-icons/fa';
 
 const Products = ({ products }) => {
     const stockTotal = products.reduce((total, product) => total + (product.cost * product.stock) , 0);
@@ -12,7 +13,7 @@ const Products = ({ products }) => {
             <SubTitle title="Products"/>
             <ProductsTable products={products} stockTotal={stockTotal}/>
             <SubTitle title={stockTitle}/>
-            <button><Link to="/product-new">add product</Link></button>
+            <button><Link to="/product-new"><FaPlus className="icon"/>New Product</Link></button>
         </div>
     )
 }
