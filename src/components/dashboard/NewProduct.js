@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductService from '../../services/ProductService';
 import { useNavigate } from 'react-router-dom';
+import '../../styles/Form.css';
 
 const NewProduct = () => {
     const [title, setTitle] = useState('');
@@ -24,6 +25,7 @@ const NewProduct = () => {
             cost: cost,
             stock: stock
         })
+        .then(alert("New Product Added"))
         .then(navigate("/dashboard"));
     }
 
@@ -51,7 +53,7 @@ const NewProduct = () => {
                         <label>Stock:</label>
                         <input type="number" onChange={handleStockChange} required/>
                     </div>
-                    <input type="submit" value="Add New Product"/>
+                    <input type="submit" value="Add Product"/>
                 </form>
         </div>
     )
