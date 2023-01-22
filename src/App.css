@@ -42,9 +42,19 @@ body {
 button {
   background-color: var(--accent);
   border: none;
-  font-size: 1.2em;
   color: var(--text);
   margin: 1em;
-  padding: .2em;
+  padding: .5em;
   font-size: 1.2em;
+}
+
+a {
+  font-size: 1em;
+  text-decoration: none;
+  color: var(--background);
+}
+
+.icon {
+  vertical-align: middle;
+  color: var(--background);
 }
