@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ProductService from '../../services/ProductService';
+import { MdDeleteForever } from 'react-icons/md';
 
 const EditProduct = () => {
     const {productId} = useParams();
@@ -21,6 +22,14 @@ const EditProduct = () => {
     const handleUpdateProductSubmit = (e) => {
         e.preventDefault();
         ProductService.updateProduct(product)
+        .then(alert("Product Updated"))
+        .then(navigate("/dashboard"));
+    }
+
+    const handleDeleteProduct = (e) => {
+        e.preventDefault();
+        ProductService.deleteProduct(productId)
+        .then(alert("Product Deleted"))
         .then(navigate("/dashboard"));
     }
 
@@ -54,6 +63,7 @@ const EditProduct = () => {
             </div>
             <input type="submit" value="Update Product"/>
         </form>
+        <button onClick={handleDeleteProduct}><MdDeleteForever className='icon'/>Delete Product</button>
     </div>
     )
 }
