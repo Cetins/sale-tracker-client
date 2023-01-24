@@ -25,6 +25,13 @@ const EditStaff = () => {
     .then(navigate("/dashboard"));
   }
 
+  const handleDeleteStaffMember = (e) => {
+    e.preventDefault();
+    StaffService.deleteStaff(staffId)
+    .then(alert("Staff Deleted"))
+    .then(navigate("/dashboard"));
+  }
+
   if (staffMember === null) {
     return (<div>Loading...</div>)
   }
@@ -51,6 +58,7 @@ const EditStaff = () => {
         </div>
         <input type="submit" value="Update Staff Member"/>
       </form>
+      <button onClick={handleDeleteStaffMember}><MdDeleteForever className='icon'/>Delete Staff Member</button>
     </div>
   )
 }
