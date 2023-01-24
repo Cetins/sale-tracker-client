@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom';
 const NewStaff = () => {
     const [name, setName] = useState();
     const [sales, setSales] = useState(0);
-    const [serviceCommission, setServiceCommission] = useState();
-    const [productCommission, setProductCommission] = useState();
+    const [serviceCommission, setServiceCommission] = useState(0);
+    const [productCommission, setProductCommission] = useState(0);
     const navigate = useNavigate();
 
     const handleNameChange = (e) => {setName(e.target.value)}
@@ -19,8 +19,8 @@ const NewStaff = () => {
         StaffService.addStaff({
             name: name,
             sales: sales,
-            serviceCommission: serviceCommission,
-            productCommission: productCommission
+            service_commission: serviceCommission,
+            product_commission: productCommission
         })
         .then(alert("New Staff Member Added"))
         .then(navigate("/dashboard"))
@@ -36,15 +36,15 @@ const NewStaff = () => {
                 </div>
                 <div>
                     <label>Sales Sum:</label>
-                    <input type="number" defaultValue={0} onChange={handleSalesChange} required/>
+                    <input type="number" onChange={handleSalesChange} />
                 </div>
                 <div>
                     <label>Service Commission Percentage:</label>
-                    <input type="number" defaultValue={0} onChange={handleServiceCommissionChange} required/>
+                    <input type="number" onChange={handleServiceCommissionChange} />
                 </div>
                 <div>
                     <label>Product Commission Percentage:</label>
-                    <input type="number" defaultValue={0} onChange={handleProductCommissionChange} required/>
+                    <input type="number" onChange={handleProductCommissionChange} />
                 </div>
                 <input type="submit" value="Add Staff Member"/>
             </form>
