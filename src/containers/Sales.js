@@ -1,6 +1,6 @@
 import React , { useState, useEffect } from "react";
 import SalesService from '../services/SalesService';
-import SalesTable from '../components/SalesTable';
+import SalesTable from '../components/SaleComponent/SalesTable';
 import SaleTabs from "../components/SaleComponent/SaleTabs";
 import ServiceService from "../services/ServiceService";
 import StaffService from '../services/StaffService';
