@@ -17,7 +17,8 @@ const NewProduct = () => {
     const handleCostChange = (e) => {setCost(e.target.value)}
     const handleStockChange = (e) => {setStock(e.target.value)}
 
-    const handleNewProductSubmit = () => {
+    const handleNewProductSubmit = (e) => {
+        e.preventDefault();
         ProductService.addProduct({
             title: title,
             manufacturer: manufacturer,

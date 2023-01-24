@@ -12,7 +12,8 @@ const NewService = () => {
     const handleDurationChange = (e) => {setDuration(e.target.value)}
     const handlePriceChange = (e) => {setPrice(e.target.value)}
 
-    const handleNewServiceSubmit = () => {
+    const handleNewServiceSubmit = (e) => {
+        e.preventDefault();
         ServiceService.addService({
             title: title,
             duration: duration,
