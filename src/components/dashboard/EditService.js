@@ -29,7 +29,7 @@ const EditService = () => {
     ServiceService.deleteService(serviceId)
     .then(alert("Service Deleted"))
     .then(navigate("/dashboard"));
-}
+  }
 
   if (service === null) {
     return ( <div>Loading...</div>)
@@ -59,4 +59,4 @@ const EditService = () => {
   )
 }
 
-export default EditService
+export default EditService;
