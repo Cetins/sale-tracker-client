@@ -1,18 +1,23 @@
 const baseURL = 'http://localhost:9000/api/sales/'
 
 const SalesService = {
+  getSale(id) {
+    return fetch(baseURL + id)
+    .then(res => res.json());
+  },
+
   getSales() {
     return fetch(baseURL)
     .then(res => res.json());
   },
 
   updateSales(sale) {
-    return fetch(baseURL + sale._id, {
-        method: 'PUT',
-        body: JSON.stringify(sale),
-        headers: {
-            'Content-Type': 'application/json'
-        }
+    const updateURL = baseURL + sale._id;
+    delete sale._id
+    return fetch(updateURL, {
+      method: 'PUT',
+      body: JSON.stringify(sale),
+      headers: {'Content-Type': 'application/json'}
     })
     .then(res => res.json());
   },
