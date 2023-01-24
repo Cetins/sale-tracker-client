@@ -9,8 +9,9 @@ import NewProduct from './components/dashboard/NewProduct';
 import './App.css';
 import EditProduct from './components/dashboard/EditProduct';
 import EditService from './components/dashboard/EditService';
-import NewService from './components/dashboard/NewService';
 import EditStaff from './components/dashboard/EditStaff';
+import EditSale from './components/SaleComponent/EditSale';
+import NewService from './components/dashboard/NewService';
 import NewStaff from './components/dashboard/NewStaff';
 
 const PrivateRoute = () => {
@@ -30,10 +31,11 @@ function App() {
           <Route exact path='/sales' element={<Sales />} />
           <Route exact path='/product-new' element={<NewProduct />} />
           <Route exact path='/service-new' element={<NewService />} />
-          <Route exact path='//staff-new' element={<NewStaff />} />
+          <Route exact path='/staff-new' element={<NewStaff />} />
           <Route path="product/:productId" element={<EditProduct />} />
           <Route path="service/:serviceId" element={<EditService />} />
           <Route path='staff/:staffId' element={<EditStaff />} />
+          <Route path="sale/:saleId" element={<EditSale />} />
         </Routes>
         <Footer />
       </Router>
