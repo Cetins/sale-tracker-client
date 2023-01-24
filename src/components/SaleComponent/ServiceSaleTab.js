@@ -4,6 +4,7 @@ import SelectService from "./SelectService";
 import SelectStaff from "./SelectStaff";
 import '../../styles/Form.css'
 import ServiceInfo from "./ServiceInfo";
+import StaffService from '../../services/StaffService';
 
 const ServiceSaleTab = ({ 
     staff,
@@ -17,12 +18,14 @@ const ServiceSaleTab = ({
     handleDateChange
     }) => {
 
-    const handleServiceSaleSubmit = (e) => {
+    const handleServiceSaleSubmit = () => {
         addSale({
             category: "service",
             title: service.title,
+            serviceId: service._id,
             price: service.price,
             staff: staffMember.name,
+            staffId: staffMember._id,
             date: date
         });
         window.alert('New sale added successfully');
