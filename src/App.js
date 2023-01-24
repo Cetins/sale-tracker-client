@@ -9,6 +9,7 @@ import NewProduct from './components/dashboard/NewProduct';
 import './App.css';
 import EditProduct from './components/dashboard/EditProduct';
 import EditService from './components/dashboard/EditService';
+import NewService from './components/dashboard/NewService';
 
 const PrivateRoute = () => {
   const auth = null;
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/dashboard'element={<Dashboard/>} />
           <Route exact path='/sales' element={<Sales />} />
           <Route exact path='/product-new' element={<NewProduct />} />
+          <Route exact path='/service-new' element={<NewService />} />
           <Route path="product/:productId" element={<EditProduct />} />
           <Route path="service/:serviceId" element={<EditService />} />
         </Routes>
