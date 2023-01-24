@@ -2,14 +2,24 @@ import React from 'react';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const StaffTable = ({ staff }) => {
+const StaffTable = ({ staff, sales }) => {
+
+    const sumByEmployeeIdAndCategory = (sales, staffId, category) => {
+        return sales.reduce((acc, sale) => {
+            if (sale.staffId === staffId && sale.category === category) {
+                acc += sale.price;
+            }
+            return acc;
+        }, 0);
+    }
+    
     const tableItems = staff.map(item => {
         return (
             <tr key={item._id}>
                 <td>{item.name}</td>
-                <td>{item.sales}</td>
-                <td>{item.service_commission}</td>
-                <td>{item.product_commission}</td>
+                <td>{item.category}</td>
+                <td>{sumByEmployeeIdAndCategory(sales, item._id, "service")}</td>
+                <td>{sumByEmployeeIdAndCategory(sales, item._id, "product")}</td>
                 <td><Link to={`/staff/${item._id}`}><FaEdit /></Link></td>
             </tr>
         )
@@ -19,9 +29,9 @@ const StaffTable = ({ staff }) => {
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Total Sales</th>
-                    <th>Service %</th>
-                    <th>Product %</th>
+                    <th>Category</th>
+                    <th>Service Sales Total</th>
+                    <th>Product Sales Total</th>
                 </tr>
             </thead>
             <tbody>
