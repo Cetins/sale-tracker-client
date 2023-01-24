@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ServiceService from '../../services/ServiceService';
+import { MdDeleteForever } from 'react-icons/md';
 
 const EditService = () => {
   const {serviceId} = useParams();
@@ -22,6 +23,13 @@ const EditService = () => {
     .then(alert("Service Updated"))
     .then(navigate("/dashboard"));
   }
+
+  const handleDeleteService = (e) => {
+    e.preventDefault();
+    ServiceService.deleteService(serviceId)
+    .then(alert("Service Deleted"))
+    .then(navigate("/dashboard"));
+}
 
   if (service === null) {
     return ( <div>Loading...</div>)
@@ -46,6 +54,7 @@ const EditService = () => {
         </div>
         <input type="submit" value="Update Service"/>
       </form>
+      <button onClick={handleDeleteService}><MdDeleteForever className='icon'/>Delete Service</button>
     </div>
   )
 }
