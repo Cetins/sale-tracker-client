@@ -8,7 +8,7 @@ const SelectService = ({ services, handleServiceChange }) => {
     
     return (
         <select onChange={handleServiceChange} required>
-            <option defaultValue={""}>Service Title</option>
+            <option></option>
             {serviceOptions}
         </select>
     )
