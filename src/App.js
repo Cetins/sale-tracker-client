@@ -10,6 +10,7 @@ import './App.css';
 import EditProduct from './components/dashboard/EditProduct';
 import EditService from './components/dashboard/EditService';
 import NewService from './components/dashboard/NewService';
+import EditStaff from './components/dashboard/EditStaff';
 
 const PrivateRoute = () => {
   const auth = null;
@@ -30,6 +31,7 @@ function App() {
           <Route exact path='/service-new' element={<NewService />} />
           <Route path="product/:productId" element={<EditProduct />} />
           <Route path="service/:serviceId" element={<EditService />} />
+          <Route path='staff/:staffId' element={<EditStaff />} />
         </Routes>
         <Footer />
       </Router>
