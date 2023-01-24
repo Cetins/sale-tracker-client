@@ -3,6 +3,7 @@ import '../../styles/Tabs.css';
 import SelectProduct from './SelectProduct';
 import SelectStaff from "./SelectStaff";
 import ProductInfo from "./ProductInfo";
+import StaffService from "../../services/StaffService";
 
 const ProductSaleTab = ({ 
     staff,
@@ -16,18 +17,18 @@ const ProductSaleTab = ({
     handleStaffMemberChange,
     handleDateChange }) => {
 
-    const handleProductSaleSubmit = (e) => {
-        e.preventDefault();
+    const handleProductSaleSubmit = () => {
         addSale({
             category: "product",
             title: product.title,
-            product_id: product._id,
+            productId: product._id,
             price: product.price,
             staff: staffMember.name,
+            staffId: staffMember._id,
             date: date
         });
-        updateStock(1)
-        console.log("add product sale")
+        updateStock(1);
+        window.alert('New sale added successfully');
     }
     
     return (
