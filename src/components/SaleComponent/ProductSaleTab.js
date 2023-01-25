@@ -3,7 +3,6 @@ import '../../styles/Tabs.css';
 import SelectProduct from './SelectProduct';
 import SelectStaff from "./SelectStaff";
 import ProductInfo from "./ProductInfo";
-import StaffService from "../../services/StaffService";
 
 const ProductSaleTab = ({ 
     staff,

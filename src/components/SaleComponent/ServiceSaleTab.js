@@ -4,7 +4,6 @@ import SelectService from "./SelectService";
 import SelectStaff from "./SelectStaff";
 import '../../styles/Form.css'
 import ServiceInfo from "./ServiceInfo";
-import StaffService from '../../services/StaffService';
 
 const ServiceSaleTab = ({ 
     staff,

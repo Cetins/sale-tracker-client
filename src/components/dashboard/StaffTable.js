@@ -30,8 +30,8 @@ const StaffTable = ({ staff, sales }) => {
                 <tr>
                     <th>Name</th>
                     <th>Category</th>
-                    <th>Service Sales Total</th>
-                    <th>Product Sales Total</th>
+                    <th>Service Sales Sum £</th>
+                    <th>Product Sales Sum £</th>
                 </tr>
             </thead>
             <tbody>

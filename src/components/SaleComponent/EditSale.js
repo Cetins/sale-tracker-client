@@ -41,7 +41,7 @@ const EditSale = () => {
 
     useEffect(() => {
         ShopService.getShop()
-            .then(res => setShop(res))
+            .then(res => setShop(res[0]))
     }, []);
     
     const handleServiceChange = (e) => {sale.title = e.target.value};
@@ -60,17 +60,24 @@ const EditSale = () => {
         const passCode = prompt("Please enter your code to confirm");
         if(passCode === shop.passCode) {
             SaleService.updateSales(sale)
-            .then(navigate("/dashboard"));
+            .then(navigate("/sales"));
         } else {
-            alert("Sorry your passCode is not correct/valid")
+            alert("Sorry your passCode is not correct/valid");
+            navigate("/sales");
         }
     }
     
     const handleDeleteSale = (e) => {
         e.preventDefault();
-        SaleService.deleteSale(saleId)
-        .then(alert("Sale Deleted"))
-        .then(navigate("/dashboard"));
+        const passCode = prompt("Please enter your code to confirm");
+        if(passCode === shop.passCode) {
+            SaleService.deleteSale(saleId)
+            .then(alert("Sale Deleted"))
+            .then(navigate("/sales"));
+        } else {
+            alert("Sorry your passCode is not correct/valid");
+            navigate("/sales");
+        }
     }
 
     staffOptions = staff.map(item => <option key={item._id}>{item.name}</option>)
@@ -101,8 +108,7 @@ const EditSale = () => {
                         <select onChange={handleProductChange} required>
                             {productOptions}
                         </select>
-                    </div>
-                }
+                    </div>}
 
                 <div>
                     <label>Date:</label>
