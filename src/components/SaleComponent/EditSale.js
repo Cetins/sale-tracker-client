@@ -44,10 +44,16 @@ const EditSale = () => {
             .then(res => setShop(res))
     }, []);
     
-    const handleServiceChange = () => {};
-    const handleProductChange = () => {};
-    const handleStaffChange = () => {};
-    const handleDateChange = () => {};
+    const handleServiceChange = (e) => {sale.title = e.target.value};
+    const handleProductChange = (e) => {sale.title = e.target.value};
+    const handleStaffChange = (e) => {sale.staff = e.target.value};
+    const handleDateChange = (e) => {sale.date = e.target.value};
+
+    if (sale === null) { return (<div>Loading Sale...</div>) }
+    if (services === null) { return (<div>Loading Services...</div>) }
+    if (products === null) { return (<div>Loading Products...</div>) }
+    if (staff === null) { return (<div>Loading Staff...</div>) }
+    if (shop === null) { return (<div>Loading Shop...</div>) }
     
     const handleUpdateSaleSubmit = (e) => {
         e.preventDefault();
@@ -66,12 +72,6 @@ const EditSale = () => {
         .then(alert("Sale Deleted"))
         .then(navigate("/dashboard"));
     }
-
-    if (sale === null) { return (<div>Loading Sale...</div>) }
-    if (services === null) { return (<div>Loading Services...</div>) }
-    if (products === null) { return (<div>Loading Products...</div>) }
-    if (staff === null) { return (<div>Loading Staff...</div>) }
-    if (shop === null) { return (<div>Loading Shop...</div>) }
 
     staffOptions = staff.map(item => <option key={item._id}>{item.name}</option>)
     serviceOptions = services.map(item => <option key={item._id}>{item.title}</option>)
@@ -114,15 +114,5 @@ const EditSale = () => {
         </div>
     )
 }
-
-// {
-//     category: "service",
-//     title: "test service",
-//     service_id: 121212,
-//     price: 30,
-//     staff: "test staff",
-//     staffId: 1234,
-//     date: "01/01/2022"
-// }
 
 export default EditSale
