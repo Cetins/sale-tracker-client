@@ -4,6 +4,7 @@ import DailySales from "../components/home/DailySales";
 import BarChart from "../components/home/BarChart";
 import PieChart from "../components/home/PieChart";
 import StockTracker from "../components/home/StockTracker";
+import BestSeller from "../components/home/BestSeller";
 
 const Home = () => {
     const [shop, setShop] = useState(null);
@@ -17,16 +18,17 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Welcome back, {shop.name}</h1>
+            <h1 className="main-title">Welcome back, {shop.name}</h1>
             <div className="parent-container">
-                <DailySales />
-                <div>
+                <div className="column child-container">
+                    <BarChart />
                     <PieChart />
                 </div>
-                <div>
-                    <BarChart />
+                <div className="column child-container">
+                    <DailySales />
+                    <StockTracker />
+                    <BestSeller />
                 </div>
-                <StockTracker />
             </div>
         </div>
     )
