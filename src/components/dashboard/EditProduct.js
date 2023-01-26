@@ -18,6 +18,7 @@ const EditProduct = () => {
     const handlePriceChange = (e) => {product.sprice = (e.target.value)}
     const handleCostChange = (e) => {product.cost = (e.target.value)}
     const handleStockChange = (e) => {product.stock = (e.target.value)}
+    const handleSoldChange = (e) => {product.sold = (e.target.value)}
 
     const handleUpdateProductSubmit = (e) => {
         e.preventDefault();
@@ -60,6 +61,10 @@ const EditProduct = () => {
                 <div>
                     <label>Stock:</label>
                     <input type="number" defaultValue={product?.stock} onChange={handleStockChange} required/>
+                </div>
+                <div>
+                    <label>Sold:</label>
+                    <input type="number" defaultValue={product?.sold} onChange={handleSoldChange} required/>
                 </div>
                 <input type="submit" value="Update Product"/>
             </form>

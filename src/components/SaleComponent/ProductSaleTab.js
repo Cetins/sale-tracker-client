@@ -12,6 +12,7 @@ const ProductSaleTab = ({
     date,
     addSale,
     updateStock,
+    updateSold,
     handleProductChange,
     handleStaffMemberChange,
     handleDateChange }) => {
@@ -27,6 +28,7 @@ const ProductSaleTab = ({
             date: date
         });
         updateStock(1);
+        updateSold(1);
         window.alert('New sale added successfully');
     }
     

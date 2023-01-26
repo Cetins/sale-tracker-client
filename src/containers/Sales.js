@@ -43,7 +43,14 @@ const Sales = () => {
         updatedProduct.stock -= stockSold
         setProduct(updatedProduct)
         ProductService.updateProduct(updatedProduct)
-    } 
+    }
+    
+    const updateSold = (stockSold) => {
+        const updatedProduct = {...product}
+        updatedProduct.sold += stockSold
+        setProduct(updatedProduct)
+        ProductService.updateProduct(updatedProduct)
+    }
 
     const addSale = (sale) => {
         SalesService.addSale(sale);
@@ -63,6 +70,7 @@ const Sales = () => {
                 date={date}
                 addSale={addSale}
                 updateStock={updateStock}
+                updateSold={updateSold}
                 handleServiceChange={handleServiceChange}
                 handleProductChange={handleProductChange}
                 handleStaffMemberChange={handleStaffMemberChange}
