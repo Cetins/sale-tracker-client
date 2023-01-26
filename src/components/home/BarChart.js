@@ -22,18 +22,16 @@ const BarChart = () => {
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
             {
-                label: 'Total Sales',
+                label: 'Daily Sum',
                 data: weekData,
-                backgroundColor: '#D09CFA',
-                borderColor: 'darkgray',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
                 borderWidth: 1,
             }
         ]
     }
 
-    const options = {
-
-    }
+    const options = {}
 
     return (
         <div className='child-container'>
