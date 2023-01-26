@@ -67,13 +67,13 @@ const DailySales = () => {
         return (
             <tr key={item._id}>
                 <td>{item.name}</td>
-                <td>{sumByEmployeeIdAndCategoryAndDate(sales, item._id, "service", date)}</td>
-                <td>{sumByEmployeeIdAndCategoryAndDate(sales, item._id, "product", date)}</td>
+                <td>£ {sumByEmployeeIdAndCategoryAndDate(sales, item._id, "service", date)}</td>
+                <td>£ {sumByEmployeeIdAndCategoryAndDate(sales, item._id, "product", date)}</td>
             </tr>
         )
     })
 
-    const dailyTurnover = "Total Sales For Today is: " + sumOfToday();
+    const dailyTurnover = "Total Sales For Today is: £ " + sumOfToday();
 
     return (
         <div>
@@ -83,17 +83,18 @@ const DailySales = () => {
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Service Sales Today £</th>
-                            <th>Product Sales Today £</th>
+                            <th>Service Sales Today</th>
+                            <th>Product Sales Today</th>
                         </tr>
                     </thead>
                     <tbody>
                         {tableItems}
                     </tbody>
                 </table>
+            </div>
+            <div>
                 <SubTitle title={dailyTurnover} />
             </div>
-            
         </div>
     )
 }
