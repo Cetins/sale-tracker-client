@@ -57,3 +57,7 @@ a {
 .icon {
   vertical-align: middle;
 }
+
+.sub-title {
+  color: var(--row1);
+}

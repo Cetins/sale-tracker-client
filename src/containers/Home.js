@@ -13,8 +13,8 @@ const Home = () => {
     if (shop === null) { return (<div>Loading Shop...</div>) }
 
     return (
-        <div className="parent-container">
-           <h1>Welcome back {shop.name}</h1>
+        <div>
+           <h1>Welcome back, {shop.name}</h1>
            <DailySales />
         </div>
     )
