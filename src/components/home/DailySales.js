@@ -45,9 +45,10 @@ const DailySales = () => {
     const dailyTurnover = "Total Sales For Today is: £ " + sumOfToday();
 
     return (
-        <div>
-            <MainTitle title="Daily Sales Sum"/>
-            <div className="parent-container">
+        <div className="child-container">
+            <MainTitle title="Your sale stats for today"/>
+
+            <div>
                 <table className='styled-table'>
                     <thead>
                         <tr>
