@@ -49,7 +49,7 @@ const PieChart = () => {
     
       return (
         <div className='child-container'>
-            <h1>Product Sales</h1>
+            <h1 className="main-title">Product Sales</h1>
             <div className='child-container'>
               <Pie data={data} />
             </div>
