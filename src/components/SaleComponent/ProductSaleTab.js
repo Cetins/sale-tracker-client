@@ -12,12 +12,14 @@ const ProductSaleTab = ({
     date,
     addSale,
     updateStock,
-    updateSold,
     handleProductChange,
     handleStaffMemberChange,
     handleDateChange }) => {
 
     const handleProductSaleSubmit = () => {
+        if (product.stock === 0) {
+            alert(`Sorry you don't seem to have any stock left on ${product.title}`)
+        }
         addSale({
             category: "product",
             title: product.title,
@@ -27,8 +29,7 @@ const ProductSaleTab = ({
             staffId: staffMember._id,
             date: date
         });
-        updateStock(1);
-        updateSold(1);
+        updateStock();
         window.alert('New sale added successfully');
     }
     

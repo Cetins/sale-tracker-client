@@ -40,18 +40,12 @@ const Sales = () => {
 
     const updateStock = (stockSold) => {
         const updatedProduct = {...product}
-        updatedProduct.stock -= stockSold
+        updatedProduct.stock -= 1
+        updatedProduct.sold += 1
         setProduct(updatedProduct)
         ProductService.updateProduct(updatedProduct)
     }
     
-    const updateSold = (stockSold) => {
-        const updatedProduct = {...product}
-        updatedProduct.sold += stockSold
-        setProduct(updatedProduct)
-        ProductService.updateProduct(updatedProduct)
-    }
-
     const addSale = (sale) => {
         SalesService.addSale(sale);
         const updatedSales = [...sales, sale]  
@@ -70,7 +64,6 @@ const Sales = () => {
                 date={date}
                 addSale={addSale}
                 updateStock={updateStock}
-                updateSold={updateSold}
                 handleServiceChange={handleServiceChange}
                 handleProductChange={handleProductChange}
                 handleStaffMemberChange={handleStaffMemberChange}
