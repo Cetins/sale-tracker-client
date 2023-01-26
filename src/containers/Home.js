@@ -3,6 +3,7 @@ import ShopService from '../services/ShopService';
 import DailySales from "../components/home/DailySales";
 import BarChart from "../components/home/BarChart";
 import PieChart from "../components/home/PieChart";
+import StockTracker from "../components/home/StockTracker";
 
 const Home = () => {
     const [shop, setShop] = useState(null);
@@ -20,11 +21,12 @@ const Home = () => {
             <div className="parent-container">
                 <DailySales />
                 <div>
-                    <BarChart />
-                </div>
-                <div>
                     <PieChart />
                 </div>
+                <div>
+                    <BarChart />
+                </div>
+                <StockTracker />
             </div>
         </div>
     )
