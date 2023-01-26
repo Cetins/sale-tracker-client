@@ -14,7 +14,7 @@
 .styled-form>div>label {
     display: inline-block;
     font-size: 1.2em;
-    width: 6em;
+    width: 10em;
 }
 
 .styled-form>div>select , .styled-form>div>input{
