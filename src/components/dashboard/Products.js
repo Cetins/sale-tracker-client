@@ -3,6 +3,7 @@ import SubTitle from "../SubTitle";
 import ProductsTable from "./ProductsTable";
 import { Link } from "react-router-dom";
 import { FaPlus } from 'react-icons/fa';
+import { BsBasket } from 'react-icons/bs';
 
 const Products = ({ products }) => {
     const stockTotal = products.reduce((total, product) => total + (product.cost * product.stock) , 0);
@@ -10,10 +11,10 @@ const Products = ({ products }) => {
 
     return (
         <div className="child-container">
-            <SubTitle title="Products"/>
+            <h2 className="sub-title"><div><BsBasket className="icon"/></div> Products</h2>
             <ProductsTable products={products} stockTotal={stockTotal}/>
-            <SubTitle title={stockTitle}/>
             <button><Link to="/product-new"><FaPlus className="icon"/>New Product</Link></button>
+            <SubTitle title={stockTitle}/>
         </div>
     )
 }
