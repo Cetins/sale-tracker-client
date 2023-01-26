@@ -37,7 +37,7 @@ const BarChart = () => {
         <div className='child-container'>
             <h1>Weekly Stats</h1>
 
-            <div className='chart-container'>
+            <div className='child-container'>
                 <Bar
                     data = {data}
                     options = {options}
