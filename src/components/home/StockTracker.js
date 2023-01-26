@@ -15,7 +15,7 @@ const StockTracker = () => {
 
     const lowStocks = products.filter(product => product.stock < 5)
 
-    const stockWarnings = lowStocks.map(element => <h2>{element.stock} {element.title} left in your stock.</h2>)
+    const stockWarnings = lowStocks.map(element => <h2 key={element._id}>{element.stock} {element.title} left in your stock.</h2>)
 
     return (
         <div className='child-container'>
