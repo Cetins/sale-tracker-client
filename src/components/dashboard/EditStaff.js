@@ -37,28 +37,29 @@ const EditStaff = () => {
   }
 
   return (
-    <div>
-      <p>edit staff test</p>
-      <form className="styled-form" onSubmit={handleUpdateStaffSubmit}>
-        <div>
-            <label>Full Name:</label>
-            <input type="text" defaultValue={staffMember?.name} onChange={handleNameChange} required/>
-        </div>
-        <div>
-            <label>Sales Sum:</label>
-            <input type="number" defaultValue={staffMember?.sales} onChange={handleSalesSumChange} required/>
-        </div>
-        <div>
-            <label>Service Commission:</label>
-            <input type="number" defaultValue={staffMember?.service_commission} onChange={handleServiceCommissionChange} required/>
-        </div>
-        <div>
-            <label>Product Commission:</label>
-            <input type="number" defaultValue={staffMember?.product_commission} onChange={handleProductCommissionChange} required/>
-        </div>
-        <input type="submit" value="Update Staff Member"/>
-      </form>
-      <button onClick={handleDeleteStaffMember}><MdDeleteForever className='icon'/>Delete Staff Member</button>
+    <div className='parent-container'>
+      <div className='child-container'>
+        <form className="styled-form" onSubmit={handleUpdateStaffSubmit}>
+            <div>
+                <label>Full Name:</label>
+                <input type="text" defaultValue={staffMember?.name} onChange={handleNameChange} required/>
+            </div>
+            <div>
+                <label>Sales Sum:</label>
+                <input type="number" defaultValue={staffMember?.sales} onChange={handleSalesSumChange} required/>
+            </div>
+            <div>
+                <label>Service Commission:</label>
+                <input type="number" defaultValue={staffMember?.service_commission} onChange={handleServiceCommissionChange} required/>
+            </div>
+            <div>
+                <label>Product Commission:</label>
+                <input type="number" defaultValue={staffMember?.product_commission} onChange={handleProductCommissionChange} required/>
+            </div>
+            <input type="submit" value="Update Staff Member"/>
+          </form>
+      </div>
+      <button className='delete-button' onClick={handleDeleteStaffMember}><MdDeleteForever className='icon'/>Delete Staff Member</button>
     </div>
   )
 }

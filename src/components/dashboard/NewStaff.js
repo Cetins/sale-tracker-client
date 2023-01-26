@@ -27,27 +27,28 @@ const NewStaff = () => {
     }
 
     return (
-        <div>
-            <p>new staff member test</p>
-            <form className="styled-form" onSubmit={handleNewStaffSubmit}>
-                <div>
-                    <label>Staff Member Name:</label>
-                    <input type="text" onChange={handleNameChange} required/>
-                </div>
-                <div>
-                    <label>Sales Sum:</label>
-                    <input type="number" onChange={handleSalesChange} />
-                </div>
-                <div>
-                    <label>Service Commission Percentage:</label>
-                    <input type="number" onChange={handleServiceCommissionChange} />
-                </div>
-                <div>
-                    <label>Product Commission Percentage:</label>
-                    <input type="number" onChange={handleProductCommissionChange} />
-                </div>
-                <input type="submit" value="Add Staff Member"/>
-            </form>
+        <div className='parent-container'>
+            <div className='child-container'>
+                <form className="styled-form" onSubmit={handleNewStaffSubmit}>
+                    <div>
+                        <label>Staff Member Name:</label>
+                        <input type="text" onChange={handleNameChange} required/>
+                    </div>
+                    <div>
+                        <label>Sales Sum:</label>
+                        <input type="number" onChange={handleSalesChange} />
+                    </div>
+                    <div>
+                        <label>Service Commission Percentage:</label>
+                        <input type="number" onChange={handleServiceCommissionChange} />
+                    </div>
+                    <div>
+                        <label>Product Commission Percentage:</label>
+                        <input type="number" onChange={handleProductCommissionChange} />
+                    </div>
+                    <input type="submit" value="Add Staff Member"/>
+                </form>
+            </div>
         </div>
     )
 }

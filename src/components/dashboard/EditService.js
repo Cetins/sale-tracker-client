@@ -36,25 +36,25 @@ const EditService = () => {
   }
 
   return (
-    <div>
-      <p>edit service test</p>
-
-      <form className="styled-form" onSubmit={handleUpdateServiceSubmit}>
-        <div>
-            <label>Product title:</label>
-            <input type="text" defaultValue={service?.title} onChange={handleTitleChange} required/>
-        </div>
-        <div>
-            <label>Duration:</label>
-            <input type="number" defaultValue={service?.duration} onChange={handleDurationChange} required/>
-        </div>
-        <div>
-            <label>Price:</label>
-            <input type="number" defaultValue={service?.price} onChange={handlePriceChange} required/>
-        </div>
-        <input type="submit" value="Update Service"/>
-      </form>
-      <button onClick={handleDeleteService}><MdDeleteForever className='icon'/>Delete Service</button>
+    <div className='parent-container'>
+      <div className='child-container'>
+        <form className="styled-form" onSubmit={handleUpdateServiceSubmit}>
+          <div>
+              <label>Product title:</label>
+              <input type="text" defaultValue={service?.title} onChange={handleTitleChange} required/>
+          </div>
+          <div>
+              <label>Duration:</label>
+              <input type="number" defaultValue={service?.duration} onChange={handleDurationChange} required/>
+          </div>
+          <div>
+              <label>Price:</label>
+              <input type="number" defaultValue={service?.price} onChange={handlePriceChange} required/>
+          </div>
+          <input type="submit" value="Update Service"/>
+        </form>
+        <button className='delete-button' onClick={handleDeleteService}><MdDeleteForever className='icon'/>Delete Service</button>
+      </div>
     </div>
   )
 }

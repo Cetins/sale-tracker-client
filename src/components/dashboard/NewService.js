@@ -24,23 +24,24 @@ const NewService = () => {
     }
 
     return (
-        <div>
-            <p>new service test</p>
-            <form className="styled-form" onSubmit={handleNewServiceSubmit}>
-                <div>
-                    <label>Service Title:</label>
-                    <input type="text" onChange={handleTitleChange} required/>
-                </div>
-                <div>
-                    <label>Duration:</label>
-                    <input type="number" onChange={handleDurationChange} required/>
-                </div>
-                <div>
-                    <label>Price:</label>
-                    <input type="number" onChange={handlePriceChange} required/>
-                </div>
-                <input type="submit" value="Add Service"/>
-            </form>
+        <div className='parent-container'>
+            <div className='child-container'>
+                <form className="styled-form" onSubmit={handleNewServiceSubmit}>
+                    <div>
+                        <label>Service Title:</label>
+                        <input type="text" onChange={handleTitleChange} required/>
+                    </div>
+                    <div>
+                        <label>Duration:</label>
+                        <input type="number" onChange={handleDurationChange} required/>
+                    </div>
+                    <div>
+                        <label>Price:</label>
+                        <input type="number" onChange={handlePriceChange} required/>
+                    </div>
+                    <input type="submit" value="Add Service"/>
+                </form>
+            </div>
         </div>
     )
 }

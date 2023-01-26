@@ -31,9 +31,9 @@ const NewProduct = () => {
     }
 
     return (
-        <div>
-            <p>new product test</p>
-            <form className="styled-form" onSubmit={handleNewProductSubmit}>
+        <div className='parent-container'>
+            <div className='child-container'> 
+                <form className="styled-form" onSubmit={handleNewProductSubmit}>
                     <div>
                         <label>Product title:</label>
                         <input type="text" onChange={handleTitleChange} required/>
@@ -56,6 +56,7 @@ const NewProduct = () => {
                     </div>
                     <input type="submit" value="Add Product"/>
                 </form>
+            </div>
         </div>
     )
 }

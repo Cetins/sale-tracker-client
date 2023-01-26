@@ -39,36 +39,37 @@ const EditProduct = () => {
     }
 
     return (
-        <div>
-            <p>edit product test</p>
-            <form className="styled-form" onSubmit={handleUpdateProductSubmit}>
-                <div>
-                    <label>Product title:</label>
-                    <input type="text" defaultValue={product?.title} onChange={handleTitleChange} required/>
-                </div>
-                <div>
-                    <label>Manufacturer:</label>
-                    <input type="text" defaultValue={product?.manufacturer} onChange={handleManufacturerChange} required/>
-                </div>
-                <div>
-                    <label>Sale Price:</label>
-                    <input type="number" defaultValue={product?.price} onChange={handlePriceChange} required/>
-                </div>
-                <div>
-                    <label>Cost:</label>
-                    <input type="number" defaultValue={product?.cost} onChange={handleCostChange} required/>
-                </div>
-                <div>
-                    <label>Stock:</label>
-                    <input type="number" defaultValue={product?.stock} onChange={handleStockChange} required/>
-                </div>
-                <div>
-                    <label>Sold:</label>
-                    <input type="number" defaultValue={product?.sold} onChange={handleSoldChange} required/>
-                </div>
-                <input type="submit" value="Update Product"/>
-            </form>
-        <button onClick={handleDeleteProduct}><MdDeleteForever className='icon'/>Delete Product</button>
+        <div className='parent-container'>
+            <div className='child-container'>
+                <form className="styled-form" onSubmit={handleUpdateProductSubmit}>
+                    <div>
+                        <label>Product title:</label>
+                        <input type="text" defaultValue={product?.title} onChange={handleTitleChange} required/>
+                    </div>
+                    <div>
+                        <label>Manufacturer:</label>
+                        <input type="text" defaultValue={product?.manufacturer} onChange={handleManufacturerChange} required/>
+                    </div>
+                    <div>
+                        <label>Sale Price:</label>
+                        <input type="number" defaultValue={product?.price} onChange={handlePriceChange} required/>
+                    </div>
+                    <div>
+                        <label>Cost:</label>
+                        <input type="number" defaultValue={product?.cost} onChange={handleCostChange} required/>
+                    </div>
+                    <div>
+                        <label>Stock:</label>
+                        <input type="number" defaultValue={product?.stock} onChange={handleStockChange} required/>
+                    </div>
+                    <div>
+                        <label>Sold:</label>
+                        <input type="number" defaultValue={product?.sold} onChange={handleSoldChange} required/>
+                    </div>
+                    <input type="submit" value="Update Product"/>
+                </form>
+                <button className='delete-button' onClick={handleDeleteProduct}><MdDeleteForever className='icon'/>Delete Product</button>
+            </div>
     </div>
     )
 }
