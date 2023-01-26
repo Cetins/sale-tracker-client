@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom"
-import "../styles/Menu.css"
+import { Link } from "react-router-dom";
+import "../styles/Menu.css";
+import { FcSalesPerformance } from 'react-icons/fc';
 
 const Menu = () => {
     return (
         <div className="menu-div">
-            <h1>Sales Tracker</h1>
+            <h1><FcSalesPerformance className="icon" /> Sales Tracker</h1>
             <ul>
                 <li className='nav-links'>
                     <Link to="/">Home</Link>

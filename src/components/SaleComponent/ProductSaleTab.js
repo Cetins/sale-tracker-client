@@ -16,30 +16,33 @@ const ProductSaleTab = ({
     handleStaffMemberChange,
     handleDateChange }) => {
 
-    const handleProductSaleSubmit = (e) => {
-        e.preventDefault();
+    const handleProductSaleSubmit = () => {
+        if (product.stock === 0) {
+            alert(`Sorry you don't seem to have any stock left on ${product.title}`)
+        }
         addSale({
             category: "product",
             title: product.title,
-            product_id: product._id,
+            productId: product._id,
             price: product.price,
             staff: staffMember.name,
+            staffId: staffMember._id,
             date: date
         });
-        updateStock(1)
-        console.log("add product sale")
+        updateStock();
+        window.alert('New sale added successfully');
     }
     
     return (
         <div className="SecondTab">
             <form className="styled-form" onSubmit={handleProductSaleSubmit}>
                 <div>
-                    <label>Product:</label>
-                    <SelectProduct products={products} handleProductChange={handleProductChange} />
-                </div>
-                <div>
                     <label>Staff:</label>
                     <SelectStaff staff={staff} handleStaffMemberChange={handleStaffMemberChange} />
+                </div>
+                <div>
+                    <label>Product:</label>
+                    <SelectProduct products={products} handleProductChange={handleProductChange} />
                 </div>
                 <div>
                     <label>Date:</label>

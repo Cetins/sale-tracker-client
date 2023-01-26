@@ -1,6 +1,6 @@
 import React , { useState, useEffect } from "react";
 import SalesService from '../services/SalesService';
-import SalesTable from '../components/SalesTable';
+import SalesTable from '../components/SaleComponent/SalesTable';
 import SaleTabs from "../components/SaleComponent/SaleTabs";
 import ServiceService from "../services/ServiceService";
 import StaffService from '../services/StaffService';
@@ -40,11 +40,12 @@ const Sales = () => {
 
     const updateStock = (stockSold) => {
         const updatedProduct = {...product}
-        updatedProduct.stock -= stockSold
+        updatedProduct.stock -= 1
+        updatedProduct.sold += 1
         setProduct(updatedProduct)
         ProductService.updateProduct(updatedProduct)
-    } 
-
+    }
+    
     const addSale = (sale) => {
         SalesService.addSale(sale);
         const updatedSales = [...sales, sale]  
@@ -67,7 +68,7 @@ const Sales = () => {
                 handleProductChange={handleProductChange}
                 handleStaffMemberChange={handleStaffMemberChange}
                 handleDateChange={handleDateChange} />
-            <SalesTable sales={sales}/>
+            <SalesTable data={sales}/>
         </div>
     )
 }

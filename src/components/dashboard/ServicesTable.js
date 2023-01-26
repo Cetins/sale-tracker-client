@@ -1,5 +1,7 @@
 import React from "react";
-import "../styles/Table.css"
+import "../../styles/Table.css";
+import { Link } from "react-router-dom";
+import { FaEdit } from 'react-icons/fa';
 
 const ServicesTable = ({ services }) => {
     const tableItems = services.map(item => {
@@ -8,6 +10,7 @@ const ServicesTable = ({ services }) => {
                 <td>{item.title}</td>
                 <td>{item.duration} mins</td>
                 <td>£ {item.price}</td>
+                <td><Link to={`/service/${item._id}`}><FaEdit /></Link></td>
             </tr>
         )
     });

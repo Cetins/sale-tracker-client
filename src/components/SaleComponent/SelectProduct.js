@@ -8,7 +8,7 @@ const SelectProduct = ({ products, handleProductChange }) => {
     
     return (
         <select onChange={handleProductChange} required>
-            <option defaultValue={""}>Product Title</option>
+            <option></option>
             {productOptions}
         </select>
     )

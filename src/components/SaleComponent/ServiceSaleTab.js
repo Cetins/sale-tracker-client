@@ -17,16 +17,17 @@ const ServiceSaleTab = ({
     handleDateChange
     }) => {
 
-    const handleServiceSaleSubmit = (e) => {
-        e.preventDefault();
+    const handleServiceSaleSubmit = () => {
         addSale({
             category: "service",
             title: service.title,
+            serviceId: service._id,
             price: service.price,
             staff: staffMember.name,
+            staffId: staffMember._id,
             date: date
         });
-        console.log("add service sale")
+        window.alert('New sale added successfully');
     }
     
     return (
