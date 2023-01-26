@@ -52,7 +52,7 @@ const DailySales = () => {
                 <table className='styled-table'>
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Staff Name</th>
                             <th>Service Sales Today</th>
                             <th>Product Sales Today</th>
                         </tr>
