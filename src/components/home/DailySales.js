@@ -3,6 +3,10 @@ import StaffService from '../../services/StaffService';
 import SalesService from '../../services/SalesService';
 import MainTitle from '../MainTitle';
 import SubTitle from '../SubTitle';
+import getTodaysDate from '../../utils/getTodaysDate';
+import sumOfTheDate from '../../utils/sumOfTheDate';
+import sumByEmployeeIdAndCategoryAndDate from '../../utils/sumByEmployeeIdAndCategoryAndDate';
+
 
 const DailySales = () => {
     const [staff, setStaff] = useState([]);
@@ -21,44 +25,9 @@ const DailySales = () => {
     if (staff === []) {return <div>Staff Loading...</div>}
     if (sales === []) {return <div>Sales Loading...</div>}
 
-    const sumByEmployeeIdAndCategoryAndDate = (sales, staffId, category, date) => {
-        return sales.reduce((acc, sale) => {
-            if (sale.staffId === staffId && sale.category === category && sale.date === date) {
-                acc += sale.price;
-            }
-            return acc;
-        }, 0);
-    }
-
-    const getTodaysDate = () => {
-        let objectDate = new Date();
-        let day = objectDate.getDate();
-        if (day < 10) {
-            day = "0"+day;
-        }
-        let month = objectDate.getMonth();
-        if (month > 8) {
-            month +=1
-        } else {
-            const newMonth = month+1
-            month = "0"+newMonth
-        }
-
-        let year = objectDate.getFullYear();
-
-        const date = year+'-'+month+'-'+day;
-
-        return date;
-    }
     const sumOfToday = () => {
         const date = getTodaysDate();
-
-        return sales.reduce((acc, sale) => {
-            if (sale.date === date) {
-                acc += sale.price;
-            }
-            return acc;
-        }, 0);
+        return sumOfTheDate(sales, date);
     }
 
     const tableItems = staff.map(item => {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ShopService from '../services/ShopService';
 import DailySales from "../components/home/DailySales";
+import BarChart from "../components/home/BarChart";
 
 const Home = () => {
     const [shop, setShop] = useState(null);
@@ -14,8 +15,11 @@ const Home = () => {
 
     return (
         <div>
-           <h1>Welcome back, {shop.name}</h1>
-           <DailySales />
+            <h1>Welcome back, {shop.name}</h1>
+            <div className="parent-container">
+                <DailySales />
+                <BarChart />
+            </div>
         </div>
     )
 }

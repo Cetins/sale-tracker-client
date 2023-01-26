@@ -1,18 +1,10 @@
 import React from 'react';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import sumByEmployeeIdAndCategory from '../../utils/sumByEmployeeIdAndCategory';
 
 const StaffTable = ({ staff, sales }) => {
 
-    const sumByEmployeeIdAndCategory = (sales, staffId, category) => {
-        return sales.reduce((acc, sale) => {
-            if (sale.staffId === staffId && sale.category === category) {
-                acc += sale.price;
-            }
-            return acc;
-        }, 0);
-    }
-    
     const tableItems = staff.map(item => {
         return (
             <tr key={item._id}>
