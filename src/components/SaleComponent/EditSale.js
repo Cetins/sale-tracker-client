@@ -80,9 +80,11 @@ const EditSale = () => {
         }
     }
 
-    staffOptions = staff.map(item => <option key={item._id}>{item.name}</option>)
-    serviceOptions = services.map(item => <option key={item._id}>{item.title}</option>)
-    productOptions = products.map(item => <option key={item._id}>{item.title}</option>)
+    staffOptions = staff.map(item => <option key={item._id} selected={item._id === sale.staffId ? true : false}>{item.name}</option>)
+
+    serviceOptions = services.map(item => <option key={item._id} selected={item._id === sale.serviceId ? true : false}>{item.title}</option>)
+
+    productOptions = products.map(item => <option key={item._id} selected={item._id === sale.productId ? true : false}>{item.title}</option>)
 
     return (
         <div>
