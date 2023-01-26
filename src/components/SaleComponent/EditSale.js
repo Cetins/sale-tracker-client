@@ -89,38 +89,39 @@ const EditSale = () => {
     productOptions = products.map(item => <option key={item._id} selected={item._id === sale.productId ? true : false}>{item.title}</option>)
 
     return (
-        <div>
-            <p>test edit sale</p>
-            <form className="styled-form" onSubmit={handleUpdateSaleSubmit}>
-                <div>
-                    <label>Staff Member:</label>
-                    <select onChange={handleStaffChange} required>
-                        {staffOptions}
-                    </select>
-                </div>
-
-                {sale.category === "service" ? 
+        <div className='parent-container'>
+            <div className='child-container'>
+                <form className="styled-form" onSubmit={handleUpdateSaleSubmit}>
                     <div>
-                        <label>Service:</label>
-                        <select onChange={handleServiceChange} required>
-                            {serviceOptions}
+                        <label>Staff:</label>
+                        <select onChange={handleStaffChange} required>
+                            {staffOptions}
                         </select>
                     </div>
-                    : 
-                    <div>
-                        <label>Product:</label>
-                        <select onChange={handleProductChange} required>
-                            {productOptions}
-                        </select>
-                    </div>}
 
-                <div>
-                    <label>Date:</label>
-                    <input type="date" defaultValue={sale.date} onChange={handleDateChange} />
-                </div>
-                <input type="submit" value="Update Sale"/>
-            </form>
-            <button onClick={handleDeleteSale}><MdDeleteForever className='icon'/>Delete Sale</button>
+                    {sale.category === "service" ? 
+                        <div>
+                            <label>Service:</label>
+                            <select onChange={handleServiceChange} required>
+                                {serviceOptions}
+                            </select>
+                        </div>
+                        : 
+                        <div>
+                            <label>Product:</label>
+                            <select onChange={handleProductChange} required>
+                                {productOptions}
+                            </select>
+                        </div>}
+
+                    <div>
+                        <label>Date:</label>
+                        <input type="date" defaultValue={sale.date} onChange={handleDateChange} />
+                    </div>
+                    <input type="submit" value="Update Sale"/>
+                </form>
+                <button className='delete-button' onClick={handleDeleteSale}><MdDeleteForever className='icon'/>Delete Sale</button>
+            </div>
         </div>
     )
 }
