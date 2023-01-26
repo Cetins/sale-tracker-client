@@ -2,7 +2,7 @@
   --background: #061018;
   --nav: #121e2c;
   --container: #121e2c;
-  --accent: #e55c31;
+  --accent: #af54caf5;
   --text: white;
   --row1: #f9f9f9;
   --row2: #ededed;
@@ -39,6 +39,25 @@ body {
   padding: 1em;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.pie {
+  width: 10rem;
+  height: 10rem;
+}
+
 button {
   background-color: var(--accent);
   border: none;
@@ -56,6 +75,7 @@ a {
 
 .icon {
   vertical-align: middle;
+  margin-right: 5px;
 }
 
 .sub-title {
