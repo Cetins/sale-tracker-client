@@ -5,6 +5,7 @@ import BarChart from "../components/home/BarChart";
 import PieChart from "../components/home/PieChart";
 import StockTracker from "../components/home/StockTracker";
 import BestSeller from "../components/home/BestSeller";
+import ThemeChange from "../components/home/ThemeChange";
 
 const Home = () => {
     const [shop, setShop] = useState(null);
@@ -28,6 +29,7 @@ const Home = () => {
                     <DailySales />
                     <StockTracker />
                     <BestSeller />
+                    <ThemeChange />
                 </div>
             </div>
         </div>
