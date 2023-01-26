@@ -6,7 +6,17 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 
 const SalesTable = ({ data }) => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [perPage, setPerPage] = useState(5);
+    const [perPage, setPerPage] = useState(10);
+
+
+    // sort by date, newest first
+    function compare( a, b ) {
+        if ( a.date > b.date ) { return -1 }
+        if ( a.date < b.date ) { return 1 }
+        return 0;
+    }
+
+    data.sort( compare );
 
     const tableItems = data.map(item => {
         return (
