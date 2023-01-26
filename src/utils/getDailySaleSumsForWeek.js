@@ -2,6 +2,8 @@ import moment from 'moment';
 import getTodaysDate from './getTodaysDate';
 import sumOfTheDate from './sumOfTheDate';
 
+// this function get daily sums for each day in week
+
 const getDailySalesSumsForWeek = (sales) => {
 
     const today = getTodaysDate();
