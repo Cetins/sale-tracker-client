@@ -80,9 +80,13 @@ const EditSale = () => {
         }
     }
 
-    staffOptions = staff.map(item => <option key={item._id}>{item.name}</option>)
-    serviceOptions = services.map(item => <option key={item._id}>{item.title}</option>)
-    productOptions = products.map(item => <option key={item._id}>{item.title}</option>)
+    // right now using selected in option element creates warnings on the browser, but it's working no fault
+    // until I've learned how to get same results with the way react likes, this three lines below stays as it is :))
+    staffOptions = staff.map(item => <option key={item._id} selected={item._id === sale.staffId ? true : false}>{item.name}</option>)
+
+    serviceOptions = services.map(item => <option key={item._id} selected={item._id === sale.serviceId ? true : false}>{item.title}</option>)
+
+    productOptions = products.map(item => <option key={item._id} selected={item._id === sale.productId ? true : false}>{item.title}</option>)
 
     return (
         <div>
