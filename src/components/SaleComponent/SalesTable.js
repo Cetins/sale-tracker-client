@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/Table.css";
 import { Link } from "react-router-dom";
 import { FaEdit } from 'react-icons/fa';
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 
-const SalesTable = ({ sales }) => {
-    const tableItems = sales.map(item => {
+const SalesTable = ({ data }) => {
+    const [currentPage, setCurrentPage] = useState(0);
+    const [perPage, setPerPage] = useState(5);
+
+    const tableItems = data.map(item => {
         return (
             <tr key={item._id}>
                 <td>{item.category}</td>
@@ -16,6 +20,23 @@ const SalesTable = ({ sales }) => {
             </tr>
         )
     });
+
+    // slice the data to show only current page data
+    const currentData = tableItems.slice(currentPage * perPage, (currentPage + 1) * perPage);
+
+    // handle pagination
+    const prevPage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
+        }
+    }
+
+    const nextPage = () => {
+        const totalPages = Math.ceil(tableItems.length / perPage);
+        if (currentPage < (totalPages - 1)) {
+            setCurrentPage(currentPage + 1)
+        }
+    }
 
     return (
         <div className="child-container">
@@ -30,9 +51,12 @@ const SalesTable = ({ sales }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {tableItems}
+                    {currentData}
                 </tbody>
             </table>
+            <button onClick={prevPage}><FaArrowAltCircleLeft className="icon"/></button>
+            <span>{currentPage + 1}</span>
+            <button onClick={nextPage}><FaArrowAltCircleRight className="icon"/></button>
         </div>
     )
 }

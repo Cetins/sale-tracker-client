@@ -67,7 +67,7 @@ const Sales = () => {
                 handleProductChange={handleProductChange}
                 handleStaffMemberChange={handleStaffMemberChange}
                 handleDateChange={handleDateChange} />
-            <SalesTable sales={sales}/>
+            <SalesTable data={sales}/>
         </div>
     )
 }
