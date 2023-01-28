@@ -9,8 +9,8 @@ const NewService = () => {
     const navigate = useNavigate();
 
     const handleTitleChange = (e) => {setTitle(e.target.value)}
-    const handleDurationChange = (e) => {setDuration(e.target.value)}
-    const handlePriceChange = (e) => {setPrice(e.target.value)}
+    const handleDurationChange = (e) => {setDuration(parseInt(e.target.value))}
+    const handlePriceChange = (e) => {setPrice(parseInt(e.target.value))}
 
     const handleNewServiceSubmit = (e) => {
         e.preventDefault();

@@ -10,9 +10,9 @@ const NewStaff = () => {
     const navigate = useNavigate();
 
     const handleNameChange = (e) => {setName(e.target.value)}
-    const handleSalesChange = (e) => {setSales(e.target.value)}
-    const handleServiceCommissionChange = (e) => {setServiceCommission(e.target.value)}
-    const handleProductCommissionChange = (e) => {setProductCommission(e.target.value)}
+    const handleSalesChange = (e) => {setSales(parseInt(e.target.value))}
+    const handleServiceCommissionChange = (e) => {setServiceCommission(parseInt(e.target.value))}
+    const handleProductCommissionChange = (e) => {setProductCommission(parseInt(e.target.value))}
 
     const handleNewStaffSubmit = (e) => {
         e.preventDefault();

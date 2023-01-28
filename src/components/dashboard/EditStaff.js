@@ -14,9 +14,9 @@ const EditStaff = () => {
   }, []);
 
   const handleNameChange = (e) => {staffMember.name = (e.target.value)};
-  const handleSalesSumChange = (e) => {staffMember.sales = (e.target.value)};
-  const handleServiceCommissionChange = (e) => {staffMember.service_commission = (e.target.value)};
-  const handleProductCommissionChange = (e) => {staffMember.product_commission = (e.target.value)};
+  const handleSalesSumChange = (e) => {staffMember.sales = parseInt(e.target.value)};
+  const handleServiceCommissionChange = (e) => {staffMember.service_commission = parseInt(e.target.value)};
+  const handleProductCommissionChange = (e) => {staffMember.product_commission = parseInt(e.target.value)};
 
   const handleUpdateStaffSubmit = (e) => {
     e.preventDefault();
@@ -58,8 +58,8 @@ const EditStaff = () => {
             </div>
             <input type="submit" value="Update Staff Member"/>
           </form>
+          <button className='delete-button' onClick={handleDeleteStaffMember}><MdDeleteForever className='icon'/>Delete Staff Member</button>
       </div>
-      <button className='delete-button' onClick={handleDeleteStaffMember}><MdDeleteForever className='icon'/>Delete Staff Member</button>
     </div>
   )
 }

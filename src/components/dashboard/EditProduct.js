@@ -15,10 +15,10 @@ const EditProduct = () => {
 
     const handleTitleChange = (e) => {product.title = (e.target.value)}
     const handleManufacturerChange = (e) => {product.manufacturer = (e.target.value)}
-    const handlePriceChange = (e) => {product.sprice = (e.target.value)}
-    const handleCostChange = (e) => {product.cost = (e.target.value)}
-    const handleStockChange = (e) => {product.stock = (e.target.value)}
-    const handleSoldChange = (e) => {product.sold = (e.target.value)}
+    const handlePriceChange = (e) => {product.sprice = parseInt(e.target.value)}
+    const handleCostChange = (e) => {product.cost = parseInt(e.target.value)}
+    const handleStockChange = (e) => {product.stock = parseInt(e.target.value)}
+    const handleSoldChange = (e) => {product.sold = parseInt(e.target.value)}
 
     const handleUpdateProductSubmit = (e) => {
         e.preventDefault();
