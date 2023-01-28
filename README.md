@@ -1,1 +1,1 @@
-# sale-tracker-client repo => https://github.com/Cetins/sale-tracker-client
+## sale-tracker-server repo => https://github.com/Cetins/sale-tracker-server
