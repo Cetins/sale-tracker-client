@@ -14,8 +14,8 @@ const EditService = () => {
   }, []);
 
   const handleTitleChange = (e) => {service.title = (e.target.value)};
-  const handleDurationChange = (e) => {service.duration = (e.target.value)};
-  const handlePriceChange = (e) => {service.price = (e.target.value)};
+  const handleDurationChange = (e) => {service.duration = parseInt(e.target.value)};
+  const handlePriceChange = (e) => {service.price = parseInt(e.target.value)};
 
   const handleUpdateServiceSubmit = (e) => {
     e.preventDefault();

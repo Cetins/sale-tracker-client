@@ -13,9 +13,9 @@ const NewProduct = () => {
 
     const handleTitleChange = (e) => {setTitle(e.target.value)}
     const handleManufacturerChange = (e) => {setManufacturer(e.target.value)}
-    const handlePriceChange = (e) => {setPrice(e.target.value)}
-    const handleCostChange = (e) => {setCost(e.target.value)}
-    const handleStockChange = (e) => {setStock(e.target.value)}
+    const handlePriceChange = (e) => {setPrice(parseInt(e.target.value))}
+    const handleCostChange = (e) => {setCost(parseInt(e.target.value))}
+    const handleStockChange = (e) => {setStock(parseInt(e.target.value))}
 
     const handleNewProductSubmit = (e) => {
         e.preventDefault();
@@ -24,7 +24,8 @@ const NewProduct = () => {
             manufacturer: manufacturer,
             price, price,
             cost: cost,
-            stock: stock
+            stock: stock,
+            sold: 0
         })
         .then(alert("New Product Added"))
         .then(navigate("/dashboard"));
