@@ -73,3 +73,7 @@ To run your server you can use ```npm run server:dev``` command from the root of
 To run your client you can use ``` npm start``` command from the root of the sale-tracker-client directory.
 
 I would personally open two seperate terminal windows and run server and client. I don't like to clutter my code editor's internal terminal and save it for git commands.
+
+## How to Contribute
+
+I'm still figuring out things and learning on the go, so there arent any rules or guidelines. Feel free to clone and manipulate the code for your own use. But please contact me before creating a pull request to these repositories.
