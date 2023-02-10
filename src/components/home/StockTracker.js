@@ -1,17 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import ProductService from '../../services/ProductService';
+import React from 'react';
 import MainTitle from '../MainTitle';
 import SubTitle from '../SubTitle';
 
-const StockTracker = () => {
-    const [products, setProducts] = useState(null);
-
-    useEffect(() => {
-        ProductService.getProducts()
-        .then(res => setProducts(res))
-    })
-
-    if (products === null) {return <div>Loading Products...</div>}
+const StockTracker = ({ products }) => {
 
     const lowStocks = products.filter(product => product.stock < 5)
 

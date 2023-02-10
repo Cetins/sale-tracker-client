@@ -8,18 +8,18 @@ import StaffService from '../services/StaffService';
 import SalesService from '../services/SalesService';
 
 const Dashboard = () => {
-    const [products, setProducts] = useState([]);
-    const [services, setServices] = useState([]);
-    const [staff, setStaff] = useState([]);
-    const [sales, setSales] = useState([]);
+    const [products, setProducts] = useState(null);
+    const [services, setServices] = useState(null);
+    const [staff, setStaff] = useState(null);
+    const [sales, setSales] = useState(null);
 
     useEffect(() => {
         ProductService.getProducts()
-            .then(products => setProducts(products));
+            .then(res => setProducts(res));
     }, []);
     useEffect(() => {
         ServiceService.getServices()
-            .then(services => setServices(services));
+            .then(res => setServices(res));
     }, []);
     useEffect(() => {
         StaffService.getStaff()
@@ -30,6 +30,11 @@ const Dashboard = () => {
             .then(res => setSales(res));
     }, []);
 
+    if (products === null) {return <div>Loading Products...</div>}
+    if (services === null) {return <div>Services Loading...</div>}
+    if (staff === null) {return <div>Staff Loading...</div>}
+    if (sales === null) {return <div>Sales Loading...</div>}
+    
     return (
         <div className="parent-container">
             <Products products={products}/>
