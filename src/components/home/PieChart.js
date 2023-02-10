@@ -1,20 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import ProductService from '../../services/ProductService';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PieChart = () => {
-  const [products, setProducts] = useState(null);
-
-  useEffect(() => {
-    ProductService.getProducts()
-        .then(res => setProducts(res))
-  }, []);
-
-  if (products === null) {return <div>Products Loading...</div>}
-
+const PieChart = ({ products }) => {
   const productLabels = products.map(item => item.title);
 
   const productSaleCounts = products.map(item => item.sold);

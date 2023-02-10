@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import StaffService from '../../services/StaffService';
-import SalesService from '../../services/SalesService';
+import React from 'react';
 import MainTitle from '../MainTitle';
 import SubTitle from '../SubTitle';
 import getTodaysDate from '../../utils/getTodaysDate';
@@ -8,23 +6,7 @@ import sumOfTheDate from '../../utils/sumOfTheDate';
 import sumByEmployeeIdAndCategoryAndDate from '../../utils/sumByEmployeeIdAndCategoryAndDate';
 
 
-const DailySales = () => {
-    const [staff, setStaff] = useState([]);
-    const [sales, setSales] = useState([]);
-
-    useEffect(() => {
-        StaffService.getStaff()
-            .then(res => setStaff(res))
-    }, []);
-
-    useEffect(() => {
-        SalesService.getSales()
-            .then(res => setSales(res))
-    }, []);
-
-    if (staff === []) {return <div>Staff Loading...</div>}
-    if (sales === []) {return <div>Sales Loading...</div>}
-
+const DailySales = ({ sales, staff }) => {
     const sumOfToday = () => {
         const date = getTodaysDate();
         return sumOfTheDate(sales, date);

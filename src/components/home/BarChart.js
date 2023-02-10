@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import SalesService from '../../services/SalesService';
+
 import getDailySalesSumsForWeek from '../../utils/getDailySaleSumsForWeek';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend)
 
-const BarChart = () => {
-    const [sales, setSales] = useState(null);
-
-    useEffect(() => {
-        SalesService.getSales()
-            .then(res => setSales(res))
-    }, []);
-
-    if (sales === null) {return <div>Sales Loading...</div>}
-
+const BarChart = ({ sales }) => {
+    
     const weekData = getDailySalesSumsForWeek(sales);
 
     const data = {
