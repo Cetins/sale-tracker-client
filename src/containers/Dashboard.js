@@ -12,7 +12,7 @@ const Dashboard = () => {
     const [services, setServices] = useState(null);
     const [staff, setStaff] = useState(null);
     const [sales, setSales] = useState(null);
-
+    
     useEffect(() => {
         ProductService.getProducts()
             .then(res => setProducts(res));
@@ -37,9 +37,9 @@ const Dashboard = () => {
     
     return (
         <div className="parent-container">
-            <Products products={products}/>
-            <Services services={services}/>
-            <Staff staff={staff} sales={sales}/>
+            <Products products={products} />
+            <Services services={services} />
+            <Staff staff={staff} sales={sales} />
         </div>
     )
 }
