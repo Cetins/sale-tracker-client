@@ -3,6 +3,7 @@ import '../../styles/Tabs.css';
 import SelectProduct from './SelectProduct';
 import SelectStaff from "./SelectStaff";
 import ProductInfo from "./ProductInfo";
+import { toast } from 'react-toastify';
 
 const ProductSaleTab = ({ 
     staff,
@@ -18,7 +19,7 @@ const ProductSaleTab = ({
 
     const handleProductSaleSubmit = () => {
         if (product.stock === 0) {
-            alert(`Sorry you don't seem to have any stock left on ${product.title}`)
+            toast.error(`Sorry you don't seem to have any stock left on ${product.title}`)
         }
         addSale({
             category: "product",
@@ -30,7 +31,7 @@ const ProductSaleTab = ({
             date: date
         });
         updateStock();
-        window.alert('New sale added successfully');
+        toast.info('New sale added successfully');
     }
     
     return (

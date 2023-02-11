@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import StaffService from '../../services/StaffService';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const NewStaff = () => {
     const [name, setName] = useState();
-    const [sales, setSales] = useState(0);
+    const [category, setCategory] = useState();
     const [serviceCommission, setServiceCommission] = useState(0);
     const [productCommission, setProductCommission] = useState(0);
     const navigate = useNavigate();
+    const navigateDashboard = () => navigate("/dashboard");
+    const categoryOptions = ["Self-employed", "Wages"];
 
     const handleNameChange = (e) => {setName(e.target.value)}
-    const handleSalesChange = (e) => {setSales(parseInt(e.target.value))}
+    const handleCategoryChange = (e) => {setCategory(e.target.value)}
     const handleServiceCommissionChange = (e) => {setServiceCommission(parseInt(e.target.value))}
     const handleProductCommissionChange = (e) => {setProductCommission(parseInt(e.target.value))}
 
@@ -18,12 +21,12 @@ const NewStaff = () => {
         e.preventDefault();
         StaffService.addStaff({
             name: name,
-            sales: sales,
-            service_commission: serviceCommission,
-            product_commission: productCommission
+            category: category,
+            service_percentage: serviceCommission,
+            product_percentage: productCommission
         })
-        .then(alert("New Staff Member Added"))
-        .then(navigate("/dashboard"))
+        .then(setTimeout(navigateDashboard, 1000))
+        .then(toast.info("New Staff Member Added"))
     }
 
     return (
@@ -35,8 +38,10 @@ const NewStaff = () => {
                         <input type="text" onChange={handleNameChange} required/>
                     </div>
                     <div>
-                        <label>Sales Sum:</label>
-                        <input type="number" onChange={handleSalesChange} />
+                        <label>Category:</label>
+                        <select onChange={handleCategoryChange} required>
+                            {categoryOptions.map((item, index) => <option key={index}>{item}</option>)}
+                        </select>
                     </div>
                     <div>
                         <label>Service Commission Percentage:</label>

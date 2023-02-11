@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import ServiceService from '../../services/ServiceService';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const NewService = () => {
     const [title, setTitle] = useState();
     const [duration, setDuration] = useState();
     const [price, setPrice] = useState();
     const navigate = useNavigate();
+    const navigateDashboard = () => navigate("/dashboard");
 
     const handleTitleChange = (e) => {setTitle(e.target.value)}
     const handleDurationChange = (e) => {setDuration(parseInt(e.target.value))}
@@ -19,8 +21,8 @@ const NewService = () => {
             duration: duration,
             price: price
         })
-        .then(alert("New Service Added"))
-        .then(navigate("/dashboard"))
+        .then(setTimeout(navigateDashboard, 1000))
+        .then(toast.info("New Service Added"))
     }
 
     return (
