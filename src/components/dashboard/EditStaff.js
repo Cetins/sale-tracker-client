@@ -18,8 +18,8 @@ const EditStaff = () => {
 
   const handleNameChange = (e) => {staffMember.name = (e.target.value)};
   const handleCategoryChange = (e) => {staffMember.category = (e.target.value)};
-  const handleServiceCommissionChange = (e) => {staffMember.service_commission = parseInt(e.target.value)};
-  const handleProductCommissionChange = (e) => {staffMember.product_commission = parseInt(e.target.value)};
+  const handleServiceCommissionChange = (e) => {staffMember.service_percentage = parseInt(e.target.value)};
+  const handleProductCommissionChange = (e) => {staffMember.product_percentage = parseInt(e.target.value)};
 
   const navigateDashboard = () => navigate("/dashboard");
 
@@ -58,11 +58,11 @@ const EditStaff = () => {
 
             <div>
                 <label>Service Commission:</label>
-                <input type="number" defaultValue={staffMember?.service_percentage} onChange={handleServiceCommissionChange} required/>
+                <input type="number" defaultValue={staffMember?.service_percentage} onChange={handleServiceCommissionChange}/>
             </div>
             <div>
                 <label>Product Commission:</label>
-                <input type="number" defaultValue={staffMember?.product_percentage} onChange={handleProductCommissionChange} required/>
+                <input type="number" defaultValue={staffMember?.product_percentage} onChange={handleProductCommissionChange}/>
             </div>
             <input type="submit" value="Update Staff Member"/>
           </form>
