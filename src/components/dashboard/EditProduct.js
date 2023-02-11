@@ -27,9 +27,7 @@ const EditProduct = () => {
         e.preventDefault();
         ProductService.updateProduct(product)
         .then(setTimeout(navigateDashboard, 1000))
-        .then(toast.info("Product Updated"), {
-            className: "custom-toast"
-        })
+        .then(toast.info("Product Updated"))
     }
 
     const handleDeleteProduct = (e) => {

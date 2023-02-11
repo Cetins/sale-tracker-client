@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import ServiceService from '../../services/ServiceService';
 import { MdDeleteForever } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const EditService = () => {
   const {serviceId} = useParams();
@@ -17,11 +18,13 @@ const EditService = () => {
   const handleDurationChange = (e) => {service.duration = parseInt(e.target.value)};
   const handlePriceChange = (e) => {service.price = parseInt(e.target.value)};
 
+  const navigateDashboard = () => navigate("/dashboard"); 
+
   const handleUpdateServiceSubmit = (e) => {
     e.preventDefault();
     ServiceService.updateService(service)
-    .then(alert("Service Updated"))
-    .then(navigate("/dashboard"));
+    .then(setTimeout(navigateDashboard, 1000))
+    .then(toast.info("Service Updated"))
   }
 
   const handleDeleteService = (e) => {

@@ -6,6 +6,7 @@ import ServiceService from '../../services/ServiceService';
 import ProductServices from '../../services/ProductService';
 import ShopService from '../../services/ShopService';
 import { MdDeleteForever } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const EditSale = () => {
     const {saleId} = useParams();
@@ -55,14 +56,17 @@ const EditSale = () => {
     if (staff === null) { return (<div>Loading Staff...</div>) }
     if (shop === null) { return (<div>Loading Shop...</div>) }
     
+    const navigateSales = () => navigate("/sales");
+
     const handleUpdateSaleSubmit = (e) => {
         e.preventDefault();
         const passCode = prompt("Please enter your code to confirm");
         if(passCode === shop.passCode) {
             SaleService.updateSales(sale)
-            .then(navigate("/sales"));
+            .then(setTimeout(navigateSales, 1000))
+            .then(toast.info("Sale Info Updated"))
         } else {
-            alert("Sorry your passCode is not correct/valid");
+            toast.error("Sorry your passCode is not correct/valid");
             navigate("/sales");
         }
     }
