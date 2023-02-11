@@ -4,6 +4,7 @@ import SelectService from "./SelectService";
 import SelectStaff from "./SelectStaff";
 import '../../styles/Form.css'
 import ServiceInfo from "./ServiceInfo";
+import { toast } from 'react-toastify';
 
 const ServiceSaleTab = ({ 
     staff,
@@ -27,7 +28,7 @@ const ServiceSaleTab = ({
             staffId: staffMember._id,
             date: date
         });
-        window.alert('New sale added successfully');
+        toast.info('New sale added successfully');
     }
     
     return (

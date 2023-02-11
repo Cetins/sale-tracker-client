@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProductService from '../../services/ProductService';
 import { useNavigate } from 'react-router-dom';
 import '../../styles/Form.css';
+import { toast } from 'react-toastify';
 
 const NewProduct = () => {
     const [title, setTitle] = useState('');
@@ -10,6 +11,7 @@ const NewProduct = () => {
     const [cost, setCost] = useState();
     const [stock, setStock] = useState();
     const navigate = useNavigate();
+    const navigateDashboard = () => navigate("/dashboard");
 
     const handleTitleChange = (e) => {setTitle(e.target.value)}
     const handleManufacturerChange = (e) => {setManufacturer(e.target.value)}
@@ -27,8 +29,8 @@ const NewProduct = () => {
             stock: stock,
             sold: 0
         })
-        .then(alert("New Product Added"))
-        .then(navigate("/dashboard"));
+        .then(setTimeout(navigateDashboard, 1000))
+        .then(toast.info("New Product Added"))
     }
 
     return (
