@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ProductService from '../../services/ProductService';
 import { MdDeleteForever } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 const EditProduct = () => {
     const {productId} = useParams();
@@ -20,11 +21,15 @@ const EditProduct = () => {
     const handleStockChange = (e) => {product.stock = parseInt(e.target.value)}
     const handleSoldChange = (e) => {product.sold = parseInt(e.target.value)}
 
+    const navigateDashboard = () => navigate("/dashboard")
+
     const handleUpdateProductSubmit = (e) => {
         e.preventDefault();
         ProductService.updateProduct(product)
-        .then(alert("Product Updated"))
-        .then(navigate("/dashboard"));
+        .then(setTimeout(navigateDashboard, 1000))
+        .then(toast.info("Product Updated"), {
+            className: "custom-toast"
+        })
     }
 
     const handleDeleteProduct = (e) => {
