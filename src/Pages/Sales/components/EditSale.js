@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import SaleService from '../../services/SalesService';
-import StaffService from '../../services/StaffService';
-import ServiceService from '../../services/ServiceService';
-import ProductServices from '../../services/ProductService';
-import ShopService from '../../services/ShopService';
+import SaleService from '../../../services/SalesService';
+import StaffService from '../../../services/StaffService';
+import ServiceService from '../../../services/ServiceService';
+import ProductServices from '../../../services/ProductService';
+import ShopService from '../../../services/ShopService';
 import { MdDeleteForever } from 'react-icons/md';
 import { toast } from 'react-toastify';
 

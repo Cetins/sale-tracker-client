@@ -1,6 +1,6 @@
 import React from 'react';
-import MainTitle from '../MainTitle';
-import SubTitle from '../SubTitle';
+import MainTitle from '../../../components/MainTitle';
+import SubTitle from '../../../components/SubTitle';
 
 const StockTracker = ({ products }) => {
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Products from "../components/dashboard/Products";
-import Services from "../components/dashboard/Services";
-import Staff from "../components/dashboard/Staff";
-import ProductService from "../services/ProductService";
-import ServiceService from "../services/ServiceService";
-import StaffService from '../services/StaffService';
-import SalesService from '../services/SalesService';
+import Products from "./components/Products";
+import Services from "./components/Services";
+import Staff from "./components/Staff";
+import ProductService from "../../services/ProductService";
+import ServiceService from "../../services/ServiceService";
+import StaffService from '../../services/StaffService';
+import SalesService from '../../services/SalesService';
 
 const Dashboard = () => {
     const [products, setProducts] = useState(null);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-import getDailySalesSumsForWeek from '../../utils/getDailySaleSumsForWeek';
+import getDailySalesSumsForWeek from '../../../utils/getDailySaleSumsForWeek';
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend)
 

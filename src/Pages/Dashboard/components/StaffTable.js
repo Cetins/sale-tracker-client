@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import sumByEmployeeIdAndCategory from '../../utils/sumByEmployeeIdAndCategory';
+import sumByEmployeeIdAndCategory from '../../../utils/sumByEmployeeIdAndCategory';
 
 const StaffTable = ({ staff, sales }) => {
 

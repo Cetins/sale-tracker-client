@@ -1,5 +1,5 @@
 import React from "react";
-import SubTitle from "../SubTitle";
+import SubTitle from "../../../components/SubTitle";
 
 const ProductInfo = ({ product }) => {
     return (

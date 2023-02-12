@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/Table.css";
+import "../../../styles/Table.css";
 import { Link } from "react-router-dom";
 import { FaEdit } from 'react-icons/fa';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';

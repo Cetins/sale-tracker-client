@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ShopService from '../services/ShopService';
-import ProductService from '../services/ProductService';
-import SalesService from '../services/SalesService';
-import StaffService from '../services/StaffService';
-import DailySales from "../components/home/DailySales";
-import BarChart from "../components/home/BarChart";
-import PieChart from "../components/home/PieChart";
-import StockTracker from "../components/home/StockTracker";
-import BestSeller from "../components/home/BestSeller";
-import ThemeChange from "../components/home/ThemeChange";
+import ShopService from '../../services/ShopService';
+import ProductService from '../../services/ProductService';
+import SalesService from '../../services/SalesService';
+import StaffService from '../../services/StaffService';
+import DailySales from "./components/DailySales";
+import BarChart from "./components/BarChart";
+import PieChart from "./components/PieChart";
+import StockTracker from "./components/StockTracker";
+import BestSeller from "./components/BestSeller";
+import ThemeChange from "./components/ThemeChange";
 
 const Home = () => {
     const [shop, setShop] = useState(null);

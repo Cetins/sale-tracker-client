@@ -1,9 +1,9 @@
 import React from 'react';
-import MainTitle from '../MainTitle';
-import SubTitle from '../SubTitle';
-import getTodaysDate from '../../utils/getTodaysDate';
-import sumOfTheDate from '../../utils/sumOfTheDate';
-import sumByEmployeeIdAndCategoryAndDate from '../../utils/sumByEmployeeIdAndCategoryAndDate';
+import MainTitle from '../../../components/MainTitle';
+import SubTitle from '../../../components/SubTitle';
+import getTodaysDate from '../../../utils/getTodaysDate';
+import sumOfTheDate from '../../../utils/sumOfTheDate';
+import sumByEmployeeIdAndCategoryAndDate from '../../../utils/sumByEmployeeIdAndCategoryAndDate';
 
 
 const DailySales = ({ sales, staff }) => {

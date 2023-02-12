@@ -1,5 +1,5 @@
 import React from "react";
-import SubTitle from "../SubTitle";
+import SubTitle from "../../../components/SubTitle";
 import ProductsTable from "./ProductsTable";
 import { Link } from "react-router-dom";
 import { FaPlus } from 'react-icons/fa';

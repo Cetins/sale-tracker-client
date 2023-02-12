@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ProductService from '../../services/ProductService';
+import ProductService from '../../../services/ProductService';
 import { useNavigate } from 'react-router-dom';
-import '../../styles/Form.css';
+import '../../../styles/Form.css';
 import { toast } from 'react-toastify';
 
 const NewProduct = () => {

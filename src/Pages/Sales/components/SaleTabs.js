@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import '../../styles/Tabs.css';
-import ProductService from "../../services/ProductService";
-import SalesService from "../../services/SalesService";
+import '../../../styles/Tabs.css';
+import ProductService from "../../../services/ProductService";
+import SalesService from "../../../services/SalesService";
 import ServiceSaleTab from "./ServiceSaleTab";
 import ProductSaleTab from "./ProductSaleTab";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/Tabs.css';
+import '../../../styles/Tabs.css';
 import SelectProduct from './SelectProduct';
 import SelectStaff from "./SelectStaff";
 import ProductInfo from "./ProductInfo";

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import ServiceService from '../../services/ServiceService';
+import ServiceService from '../../../services/ServiceService';
 import { MdDeleteForever } from 'react-icons/md';
 import { toast } from 'react-toastify';
 

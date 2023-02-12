@@ -1,10 +1,10 @@
 import React , { useState, useEffect } from "react";
-import SalesService from '../services/SalesService';
-import SalesTable from '../components/SaleComponent/SalesTable';
-import SaleTabs from "../components/SaleComponent/SaleTabs";
-import ServiceService from "../services/ServiceService";
-import StaffService from '../services/StaffService';
-import ProductService from '../services/ProductService';
+import SalesService from '../../services/SalesService';
+import SalesTable from './components/SalesTable';
+import SaleTabs from "./components/SaleTabs";
+import ServiceService from "../../services/ServiceService";
+import StaffService from '../../services/StaffService';
+import ProductService from '../../services/ProductService';
 
 const Sales = () => {
     const [sales, setSales] = useState([]);

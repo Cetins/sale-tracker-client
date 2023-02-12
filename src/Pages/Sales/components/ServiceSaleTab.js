@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import '../../styles/Tabs.css';
+import '../../../styles/Tabs.css';
 import SelectService from "./SelectService";
 import SelectStaff from "./SelectStaff";
-import '../../styles/Form.css'
+import '../../../styles/Form.css'
 import ServiceInfo from "./ServiceInfo";
 import { toast } from 'react-toastify';
 
