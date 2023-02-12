@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useParams} from "react-router-dom";
-import Home from './containers/Home';
-import Sales from './containers/Sales';
-import Dashboard from './containers/Dashboard';
+import Home from './Pages/HomePage/Home';
+import Sales from './Pages/Sales/Sales';
+import Dashboard from './Pages/Dashboard/Dashboard';
 import Menu from './components/Menu';
 import Footer from './components/Footer';
-import NewProduct from './components/dashboard/NewProduct';
+import NewProduct from './Pages/Dashboard/components/NewProduct';
 import './App.css';
-import EditProduct from './components/dashboard/EditProduct';
-import EditService from './components/dashboard/EditService';
-import EditStaff from './components/dashboard/EditStaff';
-import EditSale from './components/SaleComponent/EditSale';
-import NewService from './components/dashboard/NewService';
-import NewStaff from './components/dashboard/NewStaff';
+import EditProduct from './Pages/Dashboard/components/EditProduct';
+import EditService from './Pages/Dashboard/components/EditService';
+import EditStaff from './Pages/Dashboard/components/EditStaff';
+import EditSale from './Pages/Sales/components/EditSale';
+import NewService from './Pages/Dashboard/components/NewService';
+import NewStaff from './Pages/Dashboard/components/NewStaff';
 
 const PrivateRoute = () => {
   const auth = null;
