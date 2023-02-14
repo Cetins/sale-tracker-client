@@ -8,7 +8,7 @@ const StaffTable = ({ staff, sales }) => {
     const tableItems = staff.map(item => {
         return (
             <tr key={item._id}>
-                <td>{item.name}</td>
+                <td>{item.first_name} {item.last_name}</td>
                 <td>{item.category}</td>
                 <td>{sumByEmployeeIdAndCategory(sales, item._id, "service")}</td>
                 <td>{sumByEmployeeIdAndCategory(sales, item._id, "product")}</td>

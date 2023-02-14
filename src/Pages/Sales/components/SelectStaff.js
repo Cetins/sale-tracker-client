@@ -3,7 +3,7 @@ import React from "react";
 const SelectStaff = ({ staff, handleStaffMemberChange }) => {
 
     const staffOptions = staff.map((member, index) => {
-        return <option key={member._id} value={index}>{member.name}</option>
+        return <option key={member._id} value={index}>{member.first_name}</option>
     })
 
     return (
