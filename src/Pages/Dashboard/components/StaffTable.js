@@ -3,16 +3,16 @@ import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import sumByEmployeeIdAndCategory from '../../../utils/sumByEmployeeIdAndCategory';
 
-const StaffTable = ({ staff, sales }) => {
+const StaffTable = ({ employees, sales }) => {
 
-    const tableItems = staff.map(item => {
+    const tableItems = employees.map(employee => {
         return (
-            <tr key={item._id}>
-                <td>{item.first_name} {item.last_name}</td>
-                <td>{item.category}</td>
-                <td>{sumByEmployeeIdAndCategory(sales, item._id, "service")}</td>
-                <td>{sumByEmployeeIdAndCategory(sales, item._id, "product")}</td>
-                <td><Link to={`/staff/${item._id}`}><FaEdit /></Link></td>
+            <tr key={employee._id}>
+                <td>{employee.full_name}</td>
+                <td>{employee.category}</td>
+                <td>{sumByEmployeeIdAndCategory(sales, employee._id, "service")}</td>
+                <td>{sumByEmployeeIdAndCategory(sales, employee._id, "product")}</td>
+                <td><Link to={`/staff/${employee._id}`}><FaEdit /></Link></td>
             </tr>
         )
     })

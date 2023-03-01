@@ -1,6 +1,6 @@
-const sumByEmployeeIdAndCategory = (sales, staffId, category) => {
+const sumByEmployeeIdAndCategory = (sales, employeeId, category) => {
     return sales.reduce((acc, sale) => {
-        if (sale.staffId === staffId && sale.category === category) {
+        if (sale.employee_id  === employeeId && sale.category === category) {
             acc += sale.price;
         }
         return acc;
