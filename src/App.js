@@ -37,6 +37,9 @@ function App() {
       }
   }, [shop]);
 
+  if (shop === null) { return <div>Loading Shop...</div>}
+  if (sales === null) {return <div>Sales Loading...</div>}
+
   return (
     <div className="App">
       <Router>
