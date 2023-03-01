@@ -7,25 +7,25 @@ import ServiceInfo from "./ServiceInfo";
 import { toast } from 'react-toastify';
 
 const ServiceSaleTab = ({ 
-    staff,
-    services,
-    staffMember,
+    shop,
+    employee,
     service,
     date,
     addSale,
-    handleStaffMemberChange,
+    handleEmployeeChange,
     handleServiceChange,
     handleDateChange
     }) => {
 
     const handleServiceSaleSubmit = () => {
         addSale({
-            category: "service",
-            title: service.title,
-            serviceId: service._id,
+            shop_id: shop._id,
+            category: "Service",
+            employee: employee.username,
+            employee_id: employee._id,
+            service: service.title,
+            service_id: service._id,
             price: service.price,
-            staff: staffMember.name,
-            staffId: staffMember._id,
             date: date
         });
         toast.info('New sale added successfully');
@@ -36,12 +36,13 @@ const ServiceSaleTab = ({
             <form className="styled-form" onSubmit={handleServiceSaleSubmit}>
                 <div>
                     <label>Staff:</label>
-                    <SelectStaff staff={staff} handleStaffMemberChange={handleStaffMemberChange} />
+                    <SelectStaff employees={shop.employees} handleEmployeeChange={handleEmployeeChange} />
                 </div>
-                <div>
-                    <label>Service:</label>
-                    <SelectService services={services} handleServiceChange={handleServiceChange}/>
-                </div>
+                { employee ? 
+                    <div>
+                        <label>Service:</label>
+                        <SelectService services={employee.services} handleServiceChange={handleServiceChange}/>
+                    </div> : ""}
                 <div>
                     <label>Date:</label>
                     <input type="date" onChange={handleDateChange} required/>

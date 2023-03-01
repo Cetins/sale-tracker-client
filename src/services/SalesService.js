@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:9000/api/sales/'
+const baseURL = 'https://eu-west-1.aws.data.mongodb-api.com/app/demoapp-hvijt/endpoint/sales'
 
 const SalesService = {
   getSale(id) {
@@ -10,6 +10,13 @@ const SalesService = {
     return fetch(baseURL)
     .then(res => res.json());
   },
+  
+  getSalesByShopId(shopId) {
+    const url = baseURL + "?shop_id=" + shopId
+    return fetch(url)
+        .then(res => res.json());
+  },
+
 
   updateSales(sale) {
     const updateURL = baseURL + sale._id;

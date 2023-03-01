@@ -1,9 +1,15 @@
-const baseURL = 'http://localhost:9000/api/shop/'
+const baseURL = 'https://eu-west-1.aws.data.mongodb-api.com/app/demoapp-hvijt/endpoint/shops'
 
 const ShopService = {
   getShop() {
       return fetch(baseURL)
           .then(res => res.json());
+  },
+
+  getShopByEmail(email) {
+    const url = baseURL + "?email=" + email
+    return fetch(url)
+        .then(res => res.json());
   },
 
   updateShop(shop) {

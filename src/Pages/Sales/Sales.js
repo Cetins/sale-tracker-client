@@ -1,40 +1,18 @@
 import React , { useState, useEffect } from "react";
 import SalesService from '../../services/SalesService';
+import ShopService from '../../services/ShopService';
 import SalesTable from './components/SalesTable';
 import SaleTabs from "./components/SaleTabs";
-import ServiceService from "../../services/ServiceService";
-import StaffService from '../../services/StaffService';
-import ProductService from '../../services/ProductService';
 
-const Sales = () => {
-    const [sales, setSales] = useState([]);
-    const [services, setServices] = useState([]);
-    const [products, setProducts] = useState([]);
-    const [staff, setStaff] = useState([]);
+const Sales = ({ shop, sales, setSales }) => {
 
-    useEffect(() => {
-        SalesService.getSales()
-            .then(sales => setSales(sales));
-    }, []);
-    useEffect(() => {
-        ServiceService.getServices()
-            .then(services => setServices(services));
-    }, []);
-    useEffect(() => {
-        ProductService.getProducts()
-            .then(products => setProducts(products));
-    }, []);
-    useEffect(() => {
-        StaffService.getStaff()
-            .then(staff => setStaff(staff));
-    }, []);
+    if (shop === null) { return <div>Loading Shop...</div>}
+    if (sales === null) {return <div>Sales Loading...</div>}
 
     return (
         <div className="parent-container">
             <SaleTabs 
-                services={services}
-                products={products}
-                staff={staff}
+                shop={shop}
                 sales={sales}
                 setSales={setSales} />
             <SalesTable data={sales}/>

@@ -1,15 +1,15 @@
 import React from "react";
 
-const SelectStaff = ({ staff, handleStaffMemberChange }) => {
+const SelectStaff = ({ employees, handleEmployeeChange }) => {
 
-    const staffOptions = staff.map((member, index) => {
-        return <option key={member._id} value={index}>{member.first_name}</option>
+    const employeeOptions = employees.map((employee, index) => {
+        return <option key={employee._id} value={index}>{employee.full_name}</option>
     })
 
     return (
-        <select onChange={handleStaffMemberChange} required>
+        <select onChange={handleEmployeeChange} required>
             <option></option>
-            {staffOptions}
+            {employeeOptions}
         </select>
     )
 }

@@ -6,18 +6,18 @@ import sumOfTheDate from '../../../utils/sumOfTheDate';
 import sumByEmployeeIdAndCategoryAndDate from '../../../utils/sumByEmployeeIdAndCategoryAndDate';
 
 
-const DailySales = ({ sales, staff }) => {
+const DailySales = ({ sales, employees }) => {
     const sumOfToday = () => {
         const date = getTodaysDate();
         return sumOfTheDate(sales, date);
     }
 
-    const tableItems = staff.map(item => {
+    const tableItems = employees.map(item => {
         const date = getTodaysDate();
 
         return (
             <tr key={item._id}>
-                <td>{item.name}</td>
+                <td>{item.full_name}</td>
                 <td>£ {sumByEmployeeIdAndCategoryAndDate(sales, item._id, "service", date)}</td>
                 <td>£ {sumByEmployeeIdAndCategoryAndDate(sales, item._id, "product", date)}</td>
             </tr>

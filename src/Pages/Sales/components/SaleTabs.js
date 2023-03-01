@@ -5,20 +5,20 @@ import SalesService from "../../../services/SalesService";
 import ServiceSaleTab from "./ServiceSaleTab";
 import ProductSaleTab from "./ProductSaleTab";
 
-const SaleTabs = ({ services, products, staff, sales, setSales }) => {
+const SaleTabs = ({ shop, sales, setSales }) => {
 
   const [activeTab, setActiveTab] = useState("tab1");
   const [service, setService] = useState();
   const [product, setProduct] = useState();
-  const [staffMember, setStaffMember] = useState();
+  const [employee, setEmployee] = useState();
   const [date, setDate] = useState();    
 
   function handleTab1() {setActiveTab("tab1")};
   function handleTab2() {setActiveTab("tab2")};
 
-  const handleServiceChange = (e) => {setService(services[e.target.value])}
-  const handleProductChange = (e) => {setProduct(products[e.target.value])}
-  const handleStaffMemberChange = (e) => {setStaffMember(staff[e.target.value])}
+  const handleServiceChange = (e) => {setService(employee.services[e.target.value])}
+  const handleProductChange = (e) => {setProduct(shop.products[e.target.value])}
+  const handleEmployeeChange = (e) => {setEmployee(shop.employees[e.target.value])}
   const handleDateChange = (e) => {setDate(e.target.value)}
 
   const updateStock = (stockSold) => {
@@ -44,25 +44,23 @@ const SaleTabs = ({ services, products, staff, sales, setSales }) => {
       <div className="outlet">
         {activeTab === "tab1" ? 
           <ServiceSaleTab 
-            staff={staff}
-            services={services}
-            staffMember={staffMember}
+            shop={shop}
+            employee={employee}
             service={service}
             date={date}
             addSale={addSale}
-            handleStaffMemberChange={handleStaffMemberChange}
+            handleEmployeeChange={handleEmployeeChange}
             handleServiceChange={handleServiceChange}
             handleDateChange={handleDateChange} /> : 
           <ProductSaleTab 
-            staff={staff}
-            products={products}
-            staffMember={staffMember}
+            shop={shop}
+            employee={employee}
             product={product}
             date={date}
             addSale={addSale}
             updateStock={updateStock}
             handleProductChange={handleProductChange}
-            handleStaffMemberChange={handleStaffMemberChange}
+            handleEmployeeChange={handleEmployeeChange}
             handleDateChange={handleDateChange} />}
       </div>
     </div>

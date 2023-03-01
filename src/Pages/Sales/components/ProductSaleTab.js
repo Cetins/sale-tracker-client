@@ -6,28 +6,29 @@ import ProductInfo from "./ProductInfo";
 import { toast } from 'react-toastify';
 
 const ProductSaleTab = ({ 
-    staff,
-    products,
-    staffMember,
+    shop,
+    employee,
     product,
     date,
     addSale,
     updateStock,
     handleProductChange,
-    handleStaffMemberChange,
+    handleEmployeeChange,
     handleDateChange }) => {
 
     const handleProductSaleSubmit = () => {
         if (product.stock === 0) {
             toast.error(`Sorry you don't seem to have any stock left on ${product.title}`)
         }
+
         addSale({
-            category: "product",
-            title: product.title,
-            productId: product._id,
+            shop_id: shop._id,
+            category: "Product",
+            employee: employee.username,
+            employee_id: employee._id,
+            product: product.title,
+            product_id: product._id,
             price: product.price,
-            staff: staffMember.name,
-            staffId: staffMember._id,
             date: date
         });
         updateStock();
@@ -39,11 +40,11 @@ const ProductSaleTab = ({
             <form className="styled-form" onSubmit={handleProductSaleSubmit}>
                 <div>
                     <label>Staff:</label>
-                    <SelectStaff staff={staff} handleStaffMemberChange={handleStaffMemberChange} />
+                    <SelectStaff employees={shop.employees} handleEmployeeChange={handleEmployeeChange} />
                 </div>
                 <div>
                     <label>Product:</label>
-                    <SelectProduct products={products} handleProductChange={handleProductChange} />
+                    <SelectProduct products={shop.products} handleProductChange={handleProductChange} />
                 </div>
                 <div>
                     <label>Date:</label>
