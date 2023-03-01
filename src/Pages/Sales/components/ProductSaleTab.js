@@ -25,11 +25,11 @@ const ProductSaleTab = ({
 
         addSale({
             shop_id: shop._id,
-            category: "Product",
-            employee: employee.username,
             employee_id: employee._id,
-            product: product.title,
             product_id: product._id,
+            employee: employee.full_name,
+            category: "Product",
+            title: product.title,
             price: product.price,
             date: date
         });

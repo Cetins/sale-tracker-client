@@ -22,11 +22,11 @@ const ServiceSaleTab = ({
     const handleServiceSaleSubmit = () => {
         addSale({
             shop_id: shop._id,
-            category: "Service",
-            employee: employee.username,
             employee_id: employee._id,
-            service: service.title,
             service_id: service._id,
+            employee: employee.full_name,
+            category: "Service",
+            title: service.title, 
             price: service.price,
             date: date
         });
