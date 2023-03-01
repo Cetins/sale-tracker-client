@@ -24,7 +24,8 @@ const SalesTable = ({ data }) => {
                 <td>{item.category}</td>
                 <td>{item.title}</td>
                 <td>£ {item.price}</td>
-                <td>{item.staff}</td>
+                <td>{item.payment_method ? item.payment_method : "NA"}</td>
+                <td>{item.employee}</td>
                 <td>{item.date}</td>
                 <td><Link to={`/sale/${item._id}`}><FaEdit /></Link></td>
             </tr>
@@ -55,8 +56,9 @@ const SalesTable = ({ data }) => {
                     <tr>
                         <th>Category</th>
                         <th>Title</th>
-                        <th>Payment</th>
-                        <th>Staff</th>
+                        <th>Price</th>
+                        <th>Payment Method</th>
+                        <th>Employee</th>
                         <th>Date</th>
                     </tr>
                 </thead>

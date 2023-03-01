@@ -5,6 +5,7 @@ import SelectStaff from "./SelectStaff";
 import '../../../styles/Form.css'
 import ServiceInfo from "./ServiceInfo";
 import { toast } from 'react-toastify';
+import SelectPayment from "./SelectPayment";
 
 const ServiceSaleTab = ({ 
     shop,
@@ -14,6 +15,7 @@ const ServiceSaleTab = ({
     addSale,
     handleEmployeeChange,
     handleServiceChange,
+    handlePaymentChange,
     handleDateChange
     }) => {
 
@@ -43,6 +45,11 @@ const ServiceSaleTab = ({
                         <label>Service:</label>
                         <SelectService services={employee.services} handleServiceChange={handleServiceChange}/>
                     </div> : ""}
+                
+                <div>
+                    <label>Payment Method:</label>
+                    <SelectPayment paymentMethods={shop.payment_methods} handlePaymentChange={handlePaymentChange} />
+                </div>
                 <div>
                     <label>Date:</label>
                     <input type="date" onChange={handleDateChange} required/>

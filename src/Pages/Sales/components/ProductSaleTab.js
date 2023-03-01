@@ -4,6 +4,7 @@ import SelectProduct from './SelectProduct';
 import SelectStaff from "./SelectStaff";
 import ProductInfo from "./ProductInfo";
 import { toast } from 'react-toastify';
+import SelectPayment from "./SelectPayment";
 
 const ProductSaleTab = ({ 
     shop,
@@ -14,6 +15,7 @@ const ProductSaleTab = ({
     updateStock,
     handleProductChange,
     handleEmployeeChange,
+    handlePaymentChange,
     handleDateChange }) => {
 
     const handleProductSaleSubmit = () => {
@@ -45,6 +47,10 @@ const ProductSaleTab = ({
                 <div>
                     <label>Product:</label>
                     <SelectProduct products={shop.products} handleProductChange={handleProductChange} />
+                </div>
+                <div>
+                    <label>Payment Method:</label>
+                    <SelectPayment paymentMethods={shop.payment_methods} handlePaymentChange={handlePaymentChange} />
                 </div>
                 <div>
                     <label>Date:</label>

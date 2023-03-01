@@ -10,6 +10,7 @@ const SaleTabs = ({ shop, sales, setSales }) => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [service, setService] = useState();
   const [product, setProduct] = useState();
+  const [payment, setPayment] = useState();
   const [employee, setEmployee] = useState();
   const [date, setDate] = useState();    
 
@@ -17,6 +18,7 @@ const SaleTabs = ({ shop, sales, setSales }) => {
   function handleTab2() {setActiveTab("tab2")};
 
   const handleServiceChange = (e) => {setService(employee.services[e.target.value])}
+  const handlePaymentChange = (e) => {setPayment(shop.payment_methods[e.target.value])}
   const handleProductChange = (e) => {setProduct(shop.products[e.target.value])}
   const handleEmployeeChange = (e) => {setEmployee(shop.employees[e.target.value])}
   const handleDateChange = (e) => {setDate(e.target.value)}
@@ -51,6 +53,7 @@ const SaleTabs = ({ shop, sales, setSales }) => {
             addSale={addSale}
             handleEmployeeChange={handleEmployeeChange}
             handleServiceChange={handleServiceChange}
+            handlePaymentChange={handlePaymentChange}
             handleDateChange={handleDateChange} /> : 
           <ProductSaleTab 
             shop={shop}
@@ -61,6 +64,7 @@ const SaleTabs = ({ shop, sales, setSales }) => {
             updateStock={updateStock}
             handleProductChange={handleProductChange}
             handleEmployeeChange={handleEmployeeChange}
+            handlePaymentChange={handlePaymentChange}
             handleDateChange={handleDateChange} />}
       </div>
     </div>
