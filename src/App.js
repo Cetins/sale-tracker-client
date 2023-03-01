@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import ShopService from './services/ShopService';
+import SalesService from './services/SalesService';
 import { BrowserRouter as Router, Routes, Route, Navigate, Outlet} from "react-router-dom";
 import Home from './Pages/HomePage/Home';
 import Sales from './Pages/Sales/Sales';
@@ -20,15 +22,29 @@ const PrivateRoute = () => {
 }
 
 function App() {
+  const [shop, setShop] = useState(null);
+  const [sales, setSales] = useState(null);
+  
+  useEffect(() => {
+      ShopService.getShopByEmail("demo@mail.com")
+          .then(res => setShop(res))
+  }, []);
+
+  useEffect(() => {
+      if (shop !== null) {
+          SalesService.getSalesByShopId(shop._id)
+          .then(res => setSales(res))
+      }
+  }, [shop]);
 
   return (
     <div className="App">
       <Router>
         <Menu />
         <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/dashboard'element={<Dashboard/>} />
-          <Route exact path='/sales' element={<Sales />} />
+          <Route exact path='/' element={<Home shop={shop} sales={sales} />} />
+          <Route exact path='/dashboard'element={<Dashboard shop={shop} sales={sales} />} />
+          <Route exact path='/sales' element={<Sales shop={shop} sales={sales} setSales={setSales} />} />
           <Route exact path='/product-new' element={<NewProduct />} />
           <Route exact path='/service-new' element={<NewService />} />
           <Route exact path='/staff-new' element={<NewStaff />} />
