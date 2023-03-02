@@ -54,7 +54,7 @@ const ProductSaleTab = ({
                 </div>
                 <div>
                     <label>Date:</label>
-                    <input type="date" onChange={handleDateChange} />
+                    <input type="datetime-local" onChange={handleDateChange} />
                 </div>
                 <input type="submit" value="Submit Sale"/>
             </form>

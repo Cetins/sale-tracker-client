@@ -52,7 +52,7 @@ const ServiceSaleTab = ({
                 </div>
                 <div>
                     <label>Date:</label>
-                    <input type="date" onChange={handleDateChange} required/>
+                    <input type="datetime-local" onChange={handleDateChange} required/>
                 </div>
                 <input type="submit" value="Submit Sale"/>
             </form>
