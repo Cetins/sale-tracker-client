@@ -31,8 +31,14 @@ const SaleTabs = ({ shop, sales, setSales }) => {
     ProductService.updateProduct(updatedProduct)
   }
 
-  const addSale = (sale) => {
-    SalesService.addSale(sale);
+  const addServiceSale = (sale) => {
+    SalesService.addServiceSale(sale);
+    const updatedSales = [...sales, sale]  
+    setSales(updatedSales);
+  }
+
+  const addProductSale = (sale) => {
+    SalesService.addProductSale(sale);
     const updatedSales = [...sales, sale]  
     setSales(updatedSales);
   }
@@ -49,8 +55,9 @@ const SaleTabs = ({ shop, sales, setSales }) => {
             shop={shop}
             employee={employee}
             service={service}
+            payment={payment}
             date={date}
-            addSale={addSale}
+            addServiceSale={addServiceSale}
             handleEmployeeChange={handleEmployeeChange}
             handleServiceChange={handleServiceChange}
             handlePaymentChange={handlePaymentChange}
@@ -59,8 +66,9 @@ const SaleTabs = ({ shop, sales, setSales }) => {
             shop={shop}
             employee={employee}
             product={product}
+            payment={payment}
             date={date}
-            addSale={addSale}
+            addProductSale={addProductSale}
             updateStock={updateStock}
             handleProductChange={handleProductChange}
             handleEmployeeChange={handleEmployeeChange}

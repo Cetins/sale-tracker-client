@@ -10,8 +10,9 @@ const ProductSaleTab = ({
     shop,
     employee,
     product,
+    payment,
     date,
-    addSale,
+    addProductSale,
     updateStock,
     handleProductChange,
     handleEmployeeChange,
@@ -23,7 +24,7 @@ const ProductSaleTab = ({
             toast.error(`Sorry you don't seem to have any stock left on ${product.title}`)
         }
 
-        addSale({
+        addProductSale({
             shop_id: shop._id,
             employee_id: employee._id,
             product_id: product._id,
@@ -31,6 +32,7 @@ const ProductSaleTab = ({
             category: "Product",
             title: product.title,
             price: product.price,
+            payment_method: payment,
             date: date
         });
         updateStock();

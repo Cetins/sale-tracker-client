@@ -11,8 +11,9 @@ const ServiceSaleTab = ({
     shop,
     employee,
     service,
+    payment,
     date,
-    addSale,
+    addServiceSale,
     handleEmployeeChange,
     handleServiceChange,
     handlePaymentChange,
@@ -20,7 +21,7 @@ const ServiceSaleTab = ({
     }) => {
 
     const handleServiceSaleSubmit = () => {
-        addSale({
+        addServiceSale({
             shop_id: shop._id,
             employee_id: employee._id,
             service_id: service._id,
@@ -28,6 +29,7 @@ const ServiceSaleTab = ({
             category: "Service",
             title: service.title, 
             price: service.price,
+            payment_method: payment,
             date: date
         });
         toast.info('New sale added successfully');

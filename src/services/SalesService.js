@@ -29,16 +29,33 @@ const SalesService = {
     .then(res => res.json());
   },
 
-  addSale(sale) {
-    return fetch(baseURL, {
-      method: 'POST',
-      body: JSON.stringify(sale),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => res.json());
+  addServiceSale(sale) {
+    const serviceUrl = `${baseURL}/services`;
+      return fetch(serviceUrl, {
+        method: 'POST',
+        body: JSON.stringify(sale),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json());
   },
+
+  addProductSale(sale) {
+    const productUrl = `${baseURL}/products`;
+      return fetch(productUrl, {
+        method: 'POST',
+        body: JSON.stringify(sale),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(res => res.json());
+  },
+
+
+
+  
 
   deleteSale(id) {
     return fetch(baseURL + id, {
