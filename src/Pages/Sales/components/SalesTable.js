@@ -19,6 +19,9 @@ const SalesTable = ({ data }) => {
     data.sort( compare );
 
     const tableItems = data.map(item => {
+        const saleDateTime = new Date(item.date);
+        const saleDate = saleDateTime.toLocaleDateString("en-GB");
+
         return (
             <tr key={item._id}>
                 <td>{item.category}</td>
@@ -26,7 +29,7 @@ const SalesTable = ({ data }) => {
                 <td>£ {item.price}</td>
                 <td>{item.payment_method ? item.payment_method : "NA"}</td>
                 <td>{item.employee}</td>
-                <td>{item.date}</td>
+                <td>{saleDate}</td>
                 <td><Link to={`/sale/${item._id}`}><FaEdit /></Link></td>
             </tr>
         )
